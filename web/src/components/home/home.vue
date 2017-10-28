@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="home">
 		<div class="toolbar">
 			<div class="home_header">xx餐厅 12号桌</div>
 			<ul class="home_body">
