@@ -1,12 +1,16 @@
 <template>
 	<div>
 		<div class="toolbar">
-			<!-- Comonent1 -->
-			<input type="button" value="添加商品">
-			<!-- Component2 -->
-			<input type="button" value="添加商品">
-			<input type="button" value="添加商品">
-			<!-- Component3 -->
+			<div class="home_header">xx餐厅 12号桌</div>
+			<ul class="home_body">
+				<li><router-link to="/floor1">推荐菜</router-link></li>
+				<li><router-link to="/floor1">会员</router-link></li>
+				<li><router-link to="/floor1">点餐</router-link></li>
+				<li><router-link to="/floor1">呼叫服务</router-link></li>
+				<li><router-link to="/floor1">已点菜</router-link></li>
+				<li><router-link to="/floor1">购物车</router-link></li>
+			</ul>
+			<div class="home_footer"></div>
 		</div>
 		<div>
 			<router-view></router-view>
@@ -16,6 +20,7 @@
 </template>
 
 <script type="text/javascript">
+	import './home.scss'
 	//$children
 	export default {
 		methods: {
