@@ -15,12 +15,22 @@
 	flex: 1;
 	li{
 		width: 50%;
-		height:4.6666rem;
-		flex: 1;
-		line-height: 4.6666rem;
 		float: left;
 		text-align: center;
+		position: relative;
+		i{
+			display: block;
+			position: absolute;
+			font-size: 60px;
+			color: white;
+			left: 50%;
+			top: 25%;
+			transform: translate(-50%,-50%);
+		}
 		a{
+			display: block;
+			height:6rem;
+			line-height: 7rem;
 			color: white;
 		}
 		&:nth-child(1){
