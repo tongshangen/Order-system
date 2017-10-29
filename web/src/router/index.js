@@ -1,9 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 import HomeComponent from '../components/home/home.vue'
 import GoodsListComponent from '../components/goodslist/goodslist.vue'
 import MenuComponent from '../components/menu/menu.vue'
 import Order_pageComponent from '../components/order_page/order_page.vue'
+
+// csx
+import Menu_header from '../components/menu_header/menu_header.vue'
+import Menu_left from '../components/menu_left/menu_left.vue'
+import Menu_datagrid from '../components/menu_datagrid/menu_datagrid.vue'
 
 Vue.use(VueRouter)
 
@@ -13,11 +19,21 @@ var router = new VueRouter({
 			path: '/',
 			name: 'home',
 			component: HomeComponent,
-			children: [{
-				path: 'menu',
-				name: 'menu',
-				component: MenuComponent
-			}]
+			// children: [{
+			// 	path: 'menu',
+			// 	name: 'menu',
+			// 	component: MenuComponent
+			// }]
+		},
+		{
+			path: '/menu',
+			name: 'menu',
+			components:{
+				// default: MenuComponent,
+				header: Menu_header,
+				left: Menu_left,
+				datagrid: Menu_datagrid
+			}
 		},
 		{
 			path: '/order_page',
