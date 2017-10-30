@@ -5,16 +5,18 @@
             <p>中餐</p>
         </div>
         <ul>
-            <li>
-                <div class="img">
-                <img src="../../img/001.jpg" alt="" />    
+            <li v-for="(value, index) in datagrid">
+                <div class="img" >
+                
+                <img :src="value.src"  alt="" />
                 </div>
-
                 <div class="centent">
-                    <h2>红烧猪脚 (500g)</h2>
-                    <p class="des">大厨出品必属精品!!</p>
-                    <p class="dex">￥<span>75</span></p>
+                    <h2>{{value.name}}</h2>
+                    <p class="des">{{value.datails}}</p>
+                    <div>
+                    <p class="dex">￥<span>{{value.price}}</span></p>
                     <i class="glyphicon glyphicon-plus-sign"></i>
+                    </div>
                 </div>
             </li>
         </ul>
@@ -23,5 +25,22 @@
 
 <script type="text/javascript">
     import './menu_datagrid.scss'
-    export default{}
+    import http from '../../utils/httpClient.js'
+
+    export default {
+        data: function(){
+            return {
+                datagrid: []
+            }
+        },
+        mounted: function(){
+            var self = this;
+            http.post({
+                url: "select"
+            }).then(res => {
+                self.datagrid = res.data
+                console.log(res.data)
+            })
+        }
+    }
 </script>

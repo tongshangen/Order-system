@@ -20,6 +20,15 @@
             <li>
                 <i class="iconfont icon-yinliao"></i><a href="#">饮料</a>
             </li>
+            <li>
+                <i class="iconfont icon-yinliao"></i><a href="#">饮料2</a>
+            </li>
+            <li>
+                <i class="iconfont icon-yinliao"></i><a href="#">饮料3</a>
+            </li>
+            <li>
+                <i class="iconfont icon-yinliao"></i><a href="#">饮料4</a>
+            </li>
         </ul>
     </div>
 
