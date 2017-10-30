@@ -1,7 +1,11 @@
 <template>
 	<div class="order">
 		<div class="order_header">
+<<<<<<< HEAD
 			<router-link to="/"><span class="glyphicon glyphicon-arrow-left" @click="back"></span></router-link><span class="header_center">订单页</span>
+=======
+			<router-link to="/menu"><span class="glyphicon glyphicon-arrow-left" @click="back"></span></router-link><span class="header_center">订单页</span>
+>>>>>>> 800c63e46c99cc6e528914913b28800de828eaf8
 		</div>
 		<div class="order_center">
 			<div class="order_mid_top"><span>订单:10001</span><span>数量:3</span><span>总计：189元</span></div><br>

@@ -1,15 +1,16 @@
 <template>
     <div id="menu_datagrid">
-        <div class="page">
+        <div class="page" v-for="(datagrid, index) in 8" >
             <i></i>
-            <p>中餐</p>
+            <!-- <p>{{datagrid[index*8].intro}}</p> -->
+            <p>{{datagrid}}</p>
         </div>
         <ul>
             <li v-for="(value, index) in datagrid">
                 <div class="img" >
-                
                 <img :src="value.src"  alt="" />
                 </div>
+
                 <div class="centent">
                     <h2>{{value.name}}</h2>
                     <p class="des">{{value.datails}}</p>
@@ -38,7 +39,12 @@
             http.post({
                 url: "select"
             }).then(res => {
-                self.datagrid = res.data
+                self.datagrid = res.data;
+
+                // <div class="page">
+                //     <i></i>
+                //     <p>热销</p>
+                // </div>
                 console.log(res.data)
             })
         }
