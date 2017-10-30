@@ -94,7 +94,6 @@
 				if($(event.target).html() == "上菜"){
 					$(event.target).parent().parent().remove();
 				}
-				console.log($(event.target).html())
 				$(event.target).html('上菜');
 				$(event.target).removeClass('btn-info');
 				$(event.target).addClass('btn-success');

@@ -6,6 +6,7 @@ import GoodsListComponent from '../components/goodslist/goodslist.vue'
 
 import Order_pageComponent from '../components/order_page/order_page.vue'
 import cookComponent from '../components/cook/cook.vue'
+import callCenterComponent from '../components/call_center/call_center.vue'
 
 // csx
 import Menu_header from '../components/menu_header/menu_header.vue'
@@ -47,6 +48,11 @@ var router = new VueRouter({
 			path: '/cook',
 			name: 'cook',
 			component: cookComponent
+		},
+		{
+			path: '/call_center',
+			name: 'call_center',
+			component: callCenterComponent
 		}
 	]
 })
