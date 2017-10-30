@@ -23,7 +23,7 @@ module.exports = {
             })
         })
         // post请求--查
-        app.post("/login", function(request, response){
+        app.post("/select", function(request, response){
             // select 查询， from 找哪个库, test 库名 ， limit 查找条数 10条
             db.select('select * from menu',function(returnData){
                 // console.log(returnData)
