@@ -94,6 +94,10 @@
 				if($(event.target).html() == "上菜"){
 					$(event.target).parent().parent().remove();
 				}
+<<<<<<< HEAD
+=======
+				console.log($(event.target).html())
+>>>>>>> 3cc5265d10ebb1a0c1138a1c2b4534a5d2a2fe74
 				$(event.target).html('上菜');
 				$(event.target).removeClass('btn-info');
 				$(event.target).addClass('btn-success');
