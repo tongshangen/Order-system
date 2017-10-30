@@ -1,0 +1,43 @@
+// 尾部
+#menu-footer {
+  width: 100%;
+  // text-align:center;
+  padding: 0 0 0 10%;
+  height: 80px;
+  line-height: 100px;
+  background: #F4B12F;
+  position: fixed;
+  bottom: 0;
+  opacity: 0.8;
+  z-index: 99;
+  .cart {
+    height: 110px;
+    width: 110px;
+    margin-left: -30px;
+    border-radius: 50%;
+    background: #ccc;
+    position: absolute;
+    bottom: 0;
+    border: 8px solid #F4B12F;
+  }
+  .money {
+    color: #26c472;
+    padding-left: 100px;
+    height: 100%;
+    line-height: 80px;
+    display: inline-block;
+    padding-bottom: 3%;
+    position: absolute;
+    bottom: 3%;
+  }
+  .r_cart {
+    text-align: center;
+    background: #fff;
+    display: inline-block;
+    float: right;
+    font-size: 40px;
+    width: 35%;
+    line-height: 80px;
+    font-size: 35px;
+  }
+}

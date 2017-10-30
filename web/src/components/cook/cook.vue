@@ -20,7 +20,7 @@
 						<td>黄焖鸡</td>
 						<td>加辣</td>
 						<td>正在制作</td>
-						<td><button class="btn btn-success" @click="serving">上菜</button></td>
+						<td><button class="btn btn-success" @click="make">上菜</button></td>
 					</tr>
 					<tr>
 						<td>10301040</td>
@@ -28,7 +28,7 @@
 						<td>黄焖鸡</td>
 						<td>加辣</td>
 						<td>正在制作</td>
-						<td><button class="btn btn-success" @click="serving">上菜</button></td>
+						<td><button class="btn btn-success" @click="make">上菜</button></td>
 					</tr>
 					<tr>
 						<td>10301040</td>
@@ -36,7 +36,7 @@
 						<td>黄焖鸡</td>
 						<td>加辣</td>
 						<td>正在制作</td>
-						<td><button class="btn btn-success" @click="serving">上菜</button></td>
+						<td><button class="btn btn-success" @click="make">上菜</button></td>
 					</tr>
 					<tr>
 						<td>10301041</td>
@@ -86,13 +86,15 @@
 	
 	//$children
 	export default {
+
 		
 		methods: {
-			serving:function(event){
-
-				$(event.target).parent().parent().remove();
-			},
+			
 			make: function(event){
+				if($(event.target).html() == "上菜"){
+					$(event.target).parent().parent().remove();
+				}
+				console.log($(event.target).html())
 				$(event.target).html('上菜');
 				$(event.target).removeClass('btn-info');
 				$(event.target).addClass('btn-success');
