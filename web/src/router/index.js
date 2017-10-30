@@ -5,12 +5,10 @@ import GoodsListComponent from '../components/goodslist/goodslist.vue'
 
 import Order_pageComponent from '../components/order_page/order_page.vue'
 import cookComponent from '../components/cook/cook.vue'
-<<<<<<< HEAD
-=======
+
 
 import callCenterComponent from '../components/call_center/call_center.vue'
 
->>>>>>> 800c63e46c99cc6e528914913b28800de828eaf8
 
 // csx
 import Menu_header from '../components/menu_header/menu_header.vue'
@@ -26,7 +24,7 @@ var router = new VueRouter({
 			path: '/',
 			name: 'home',
 			component: HomeComponent,
-<<<<<<< HEAD
+
 			// children: [{
 			// 	path: 'menu',
 			// 	name: 'menu',
@@ -37,13 +35,12 @@ var router = new VueRouter({
 			// 	name: 'menu',
 			// 	component: MenuComponent
 			// }]
-=======
+
 //			children: [{
 //				path: 'menu',
 //				name: 'menu',
 //				component: MenuComponent
 //			}]
->>>>>>> 800c63e46c99cc6e528914913b28800de828eaf8
 		},
 		{
 			path: '/menu',
