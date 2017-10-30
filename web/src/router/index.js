@@ -5,6 +5,7 @@ import HomeComponent from '../components/home/home.vue'
 import GoodsListComponent from '../components/goodslist/goodslist.vue'
 
 import Order_pageComponent from '../components/order_page/order_page.vue'
+import cookComponent from '../components/cook/cook.vue'
 
 // csx
 import Menu_header from '../components/menu_header/menu_header.vue'
@@ -41,6 +42,11 @@ var router = new VueRouter({
 			path: '/order_page',
 			name: 'order_page',
 			component: Order_pageComponent
+		},
+		{
+			path: '/cook',
+			name: 'cook',
+			component: cookComponent
 		}
 	]
 })
