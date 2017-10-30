@@ -97,7 +97,6 @@
 				$(event.target).removeClass('btn-info');
 				$(event.target).addClass('btn-success');
 				$(event.target).parent().prev().html('正在制作');
-				console.log($(event.target))
 			}
 		}
 	}
