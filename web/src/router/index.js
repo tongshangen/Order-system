@@ -23,16 +23,11 @@ var router = new VueRouter({
 			path: '/',
 			name: 'home',
 			component: HomeComponent,
-			children: [{
-				path: 'menu',
-				name: 'menu',
-				component: MenuComponent
-			}]
-			// children: [{
-			// 	path: 'menu',
-			// 	name: 'menu',
-			// 	component: MenuComponent
-			// }]
+//			children: [{
+//				path: 'menu',
+//				name: 'menu',
+//				component: MenuComponent
+//			}]
 		},
 		{
 			path: '/menu',
