@@ -1,0 +1,32 @@
+.cook_page{
+	.cook_title{
+		font-size: 20px;
+		height: 50px;
+		line-height: 50px;
+		background-color: #141414;
+		color: white;
+		text-align: center;
+	}
+	.table{
+		font-size: 20px;
+		tr{
+			th{
+				text-align: center;
+			}
+			td{
+				text-align: center;
+			}
+			&:hover{
+				background-color: #F4B12F;
+			}
+			
+		}
+		thead tr{
+			&:hover{
+				background-color: white;
+			}
+		}
+		
+	}
+	
+}
