@@ -45,6 +45,9 @@ html,body{
 			height:6rem;
 			line-height: 7rem;
 			color: white;
+			&.btn{
+				font-size: 48px;
+			}
 		}
 		&:nth-child(1){
 			background-color: #EAA61F;
@@ -66,6 +69,23 @@ html,body{
 		}
 	}
 }
+.help_title{
+	padding-left: 0.2rem;
+	background-color: #58bc58;
+	color: #fff;
+//	text-align: center;
+}
+.modal-content{
+	margin: 6rem 0rem;
+}
+#help{
+	width: 100%;	
+	padding-left: 0.2rem;
+}
+#help_btn{
+	width: 100%;
+//	margin-left: 5px;
+}
 .home_footer{
 	width: 100%;
 	height: 1.3333rem;
@@ -85,6 +105,9 @@ html,body{
 			}
 			a{
 			font-size: 70px;
+			&.btn{
+					font-size:70px;
+				}
 			}
 		}
 	}
@@ -100,6 +123,9 @@ html,body{
 			}
 			a{
 			font-size: 100px;
+			&.btn{
+					font-size:100px;
+				}
 			}
 		}
 	}
@@ -115,6 +141,9 @@ html,body{
 			}
 			a{
 			font-size:100px;
+				&.btn{
+					font-size:100px;
+				}
 			}
 		}
 	}
