@@ -1,12 +1,24 @@
+// 头部
 #menu_header{
     width: 100%;
     text-align:center;
     padding: 0 10%;
-    height: 100px;
+    height: 165px;
     line-height: 100px;
     background: #F4B12F;
     position:fixed;
     z-index: 99;
+    input {
+      height: 36%;
+      margin: 0;
+      width: 90%;
+      border-radius: 20px;
+      position: absolute;
+      bottom: 9%;
+      left: 5%;
+      font-size: 75%;
+      padding-left: 5%;
+    }
     h1{
         height: 100%;
         line-height: 100px;
@@ -30,23 +42,38 @@
     }
 
     // font-size:43px;
+    @media (min-width: 3000px) {
+      h1 {
+        font-size: 85px;
+      }
+    }
     @media (max-width: 3000px) {
           h1 {
             font-size: 75px;
           }
         }
-    @media (max-width: 2000px) {
+    @media (max-width: 2100px) {
           h1 {
-            font-size: 80px;
+            font-size: 70px;
           }
         }
-    @media (max-width: 1400px) {
+    @media (max-width: 1600px) {
           h1 {
-            font-size: 30px;
+            font-size: 65px;
           }
         }
         
-    @media (max-width: 992px) {
+    @media (max-width: 1400px) {
+      h1 {
+        font-size: 60px;
+      }
+    }
+    @media (max-width: 750px) {
+      h1 {
+        font-size: 50px;
+      }
+    }
+    @media (max-width: 640px) {
       h1 {
         font-size: 43px;
       }

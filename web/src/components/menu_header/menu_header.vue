@@ -3,6 +3,7 @@
         <i class="glyphicon glyphicon-chevron-left"></i>
         <h1>1986西餐厅</h1>
         <b class="glyphicon glyphicon-menu-hamburger"></b>
+        <input type="text" placeholder="搜索菜品"/>
     </div>
 </template>
 
