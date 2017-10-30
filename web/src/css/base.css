@@ -28,6 +28,10 @@ a{
 	zoom: 1;
 	visibility: hidden;
 }
+#app{
+	width: 100%;
+	height: 100%;
+}
 
 @font-face {font-family: "iconfont";
   src: url('../font/iconfont.eot?t=1509173430413'); /* IE9*/
