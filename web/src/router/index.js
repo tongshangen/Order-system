@@ -5,10 +5,6 @@ import GoodsListComponent from '../components/goodslist/goodslist.vue'
 
 import Order_pageComponent from '../components/order_page/order_page.vue'
 import cookComponent from '../components/cook/cook.vue'
-<<<<<<< HEAD
-
-=======
->>>>>>> 046cc54e4d3f644d5e059430bfc3c0e72c56425d
 
 // csx
 import Menu_header from '../components/menu_header/menu_header.vue'
