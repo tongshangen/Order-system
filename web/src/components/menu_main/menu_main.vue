@@ -71,9 +71,9 @@
             }
         },
         methods: {
-            on: function(){
+            on: function(e){
                 // 加入购物车效果
-                
+                // $(e.target).
                 // 数字加一
                 var numB = $('.cart .cart_span').html();
                 $('.cart .cart_span').html(Number(numB)+1);
