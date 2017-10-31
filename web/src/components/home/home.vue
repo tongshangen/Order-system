@@ -17,12 +17,10 @@
 			<router-view></router-view>
 		</div>
 
-		<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-		  <div class="modal-dialog modal-lg" role="document">
+		<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="aa">
+		  <div class="modal-dialog modal-lg" role="document" id="bb">
 		    <div class="modal-content">
-		     	<p class="help_title">请问有什么能帮助您？</p>
-		     	<input type="text" name="help" id="help"  placeholder="请输入需求" />
-		     	<button id="help_btn" @click="pull">提交</button>
+		     	
 		    </div>
 		  </div>
 		</div>
@@ -31,14 +29,31 @@
 
 <script type="text/javascript">
 	import './home.scss'
-	//$children
+	var socket = io.connect('ws://localhost:777');
 	export default {
 		methods: {
 			call: function(){
+				$('.modal-content').show();
+				$('.modal-backdrop').show();
+			
 				$('#myModal').modal();
-			},
-			pull:function(e){
-				$(e.target).parent().html(`<p>请稍后,服务员正在加速赶来..</p>`)
+				
+				
+				var modal_content = $('.modal-content');
+				
+				var html = `<p class="help_title">请问有什么能帮助您？</p>
+		     	<input type="text" name="help" id="help"  placeholder="请输入需求" />
+		     	<button id="help_btn">提交</button>`;
+		     	modal_content.html(html);
+		     	$('#help_btn').click(function(){
+		     		var help_msg = $(this).prev().val();
+					socket.emit('help', help_msg);
+					$(this).parent().html(`<p>爸爸很快就来..</p>`);
+					setTimeout(function(){
+						$('.modal-content').hide();
+						$('.modal-backdrop').hide();
+					},2000);
+		     	})
 			}
 		}
 	}
