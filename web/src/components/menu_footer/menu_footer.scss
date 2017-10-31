@@ -3,7 +3,7 @@
   width: 100%;
   // text-align:center;
   padding: 0 0 0 10%;
-  height: 80px;
+  // height: 80px;
   line-height: 100px;
   background: #F4B12F;
   position: fixed;
@@ -19,6 +19,7 @@
     position: absolute;
     bottom: 0;
     border: 8px solid #F4B12F;
+    text-align: center;
   }
   .money {
     color: #26c472;
