@@ -10,15 +10,7 @@
 
 <script>
 
-    
-    $(window).mousedown(function(e){
 
-        $('ul').css({top:-30})
-
-    })
-    $('#menu_left').mousedown(function(er){
-        console.log(123)
-    })
   export default {}
 </script>
 

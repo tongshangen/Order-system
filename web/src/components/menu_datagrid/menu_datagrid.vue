@@ -1,10 +1,17 @@
 <template>
     <div id="menu_datagrid">
+<<<<<<< HEAD
         <div class="gai" v-for="(value, index) in datagrid">
             
         <div class="page"  v-if="index%5 == 0" >
             <i></i>
             <p>{{value.intro}}</p>
+=======
+        <div class="page" v-for="(datagrid, index) in 8" >
+            <i></i>
+            <!-- <p>{{datagrid[index*8].intro}}</p> -->
+            <p>{{datagrid}}</p>
+>>>>>>> 1be732d26d0a86d2cc1c9fc0cd3c1aa8fbd60355
         </div>
         <ul>
             <li>
@@ -42,6 +49,10 @@
                 url: "select"
             }).then(res => {
                 self.datagrid = res.data;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1be732d26d0a86d2cc1c9fc0cd3c1aa8fbd60355
                 // <div class="page">
                 //     <i></i>
                 //     <p>热销</p>
