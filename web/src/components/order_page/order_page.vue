@@ -58,7 +58,7 @@
 
 
 		</div>
-		<div class="order_footer"><button type="button" class="btn btn-default btn-lg active" @click="allurge">整单催菜</button><button type="button" class="btn btn-default btn-lg active" @click="goon">继续点菜</button><button type="button" class="btn btn-default btn-lg active" @click="pay">结算</button></div>
+		<div class="order_footer"><button type="button" class="btn btn-default btn-lg active" @click="allurge">整单催菜</button><button type="button" class="btn btn-default btn-lg active" @click="goon">继续点菜</button><router-link to="/pay" ><button type="button" class="btn btn-default btn-lg active last" @click="pay">结算</button></router-link></div>
 	</div>
 </template>
 <script type="text/javascript">

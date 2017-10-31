@@ -17,7 +17,7 @@ html, body {
 		color: #fff;
 		justify-content: center;
 		align-items:center;
-		font-size: 0.36rem;
+		font-size: 0.62rem;
 		.glyphicon{
 			position: absolute;
 			left:0.2rem;
@@ -40,11 +40,11 @@ html, body {
         	padding: 10px 0;
         	width: 100%;
         	height: 0.6rem;
-        	font-size: 0.32rem;
+        	font-size: 0.48rem;
        		border-bottom: 0.01rem solid #ddd;
         	display: flex;
 			span{
-				height: 0.6rem;
+				height: 0.8rem;
 				margin: 0.05rem 0.1rem;
 				border: 0.01rem solid #ddd;
 				background-color: #F4B12F;
@@ -54,7 +54,7 @@ html, body {
 			span:nth-child(2){flex:2}
 			span:nth-child(3){flex:4}
         }
-        ul{
+        ul{margin-left: 10%;
         	li{margin-bottom: 0.3rem;
 				table{width: 100%;
 					tr{width: 100%;
@@ -78,15 +78,16 @@ html, body {
 		justify-content: center;
         align-items:center;
 		.btn{
-			width: 30%;
+			width: 26%;
 			margin: 0.2rem;
 			text-align: center;
-			font-size: 0.38rem;
+			font-size: 0.52rem;
 			background-color: #F4B12F;
 			// color:#fff;
 			border-right:0.02rem solid #ccc;
 		}
-		.last{border:none}
+
+		.last{width: 2.5rem;}
 	}
 
 }
