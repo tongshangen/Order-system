@@ -1,7 +1,6 @@
 // 用户
 var userRouter = require("./Menu.js");
 
-
 module.exports = {
     Register: function(app){
         // //跨域
@@ -18,6 +17,6 @@ module.exports = {
         });
         
         // test
-        userRouter.Register(app)
+        userRouter.Register(app);
     }
 }
