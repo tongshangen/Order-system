@@ -1,6 +1,6 @@
 <template>
-    <div id="menu_left">
-        <ul>
+    <div id="menu_left" >
+        <ul @mousemove="on">
             <li>
                 <i class="iconfont icon-iconyuanquanzhuanqu13"></i>
                 <a href="#">中餐</a>
@@ -36,5 +36,22 @@
 
 <script type="text/javascript">
     import './menu_left.scss'
-    export default{}
+
+    $(window).mousemove(function(){
+        var tp = $('#menu_left').outerHeight()-$('body').outerHeight()
+        // if( $('#menu_left').outerHeight()  )
+        console.log(tp)
+        // if($('#menu_left').css('top') >= tp ){
+        //     $('#menu_left').css('top':tp)
+        // }
+    })
+
+    export default{
+        methods: {
+            on: function(e){
+                console.log(e.clientY)
+
+            }
+        }
+    }
 </script>
