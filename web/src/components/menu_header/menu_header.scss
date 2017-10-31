@@ -1,12 +1,13 @@
 // 头部
 #menu_header{
     width: 100%;
-    text-align:center;
+    text-align: center;
     padding: 0 10%;
-    height: 165px;
+    // height: 165px;
     line-height: 100px;
     background: #F4B12F;
-    position:fixed;
+    position: fixed;
+    top: 0;
     z-index: 99;
     input {
       height: 36%;
@@ -32,6 +33,7 @@
         width: 10%;
         line-height:100px;
         left: 2%;
+        color: #222;
     }
     b{
         position:absolute;

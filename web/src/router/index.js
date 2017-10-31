@@ -12,8 +12,8 @@ import callCenterComponent from '../components/call_center/call_center.vue'
 
 // csx
 import Menu_header from '../components/menu_header/menu_header.vue'
-import Menu_left from '../components/menu_left/menu_left.vue'
-import Menu_datagrid from '../components/menu_datagrid/menu_datagrid.vue'
+// import Menu_left from '../components/menu_left/menu_left.vue'
+import Menu_main from '../components/menu_main/menu_main.vue'
 import Menu_footer from '../components/menu_footer/menu_footer.vue'
 
 import PayComponent from '../components/pay/pay.vue'
@@ -50,8 +50,8 @@ var router = new VueRouter({
 			components:{
 				// default: MenuComponent,
 				header: Menu_header,
-				left: Menu_left,
-				datagrid: Menu_datagrid,
+				// left: Menu_left,
+				datagrid: Menu_main,
 				footer: Menu_footer
 			}
 
