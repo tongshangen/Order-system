@@ -1,6 +1,5 @@
 <template>
-    <div>
-        <div class="test"></div>
+    <div class="hear_cont">
         <div id="menu_header">
             <router-link to="/"><i class="glyphicon glyphicon-chevron-left"></i></router-link>
             <h1>1986西餐厅</h1>
