@@ -25,7 +25,8 @@ html{
   display: flex;
 }
 #menu_datagrid{
-  overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     padding-bottom: 13%;
     height: 100%;
     width: 82%;
