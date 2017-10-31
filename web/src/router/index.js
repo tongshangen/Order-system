@@ -16,6 +16,8 @@ import Menu_left from '../components/menu_left/menu_left.vue'
 import Menu_datagrid from '../components/menu_datagrid/menu_datagrid.vue'
 import Menu_footer from '../components/menu_footer/menu_footer.vue'
 
+import PayComponent from '../components/pay/pay.vue'
+
 Vue.use(VueRouter)
 
 var router = new VueRouter({
@@ -68,6 +70,11 @@ var router = new VueRouter({
 			path: '/call_center',
 			name: 'call_center',
 			component: callCenterComponent
+		},
+		{
+			path: '/pay',
+			name: 'pay',
+			component: PayComponent
 		}
 	]
 })
