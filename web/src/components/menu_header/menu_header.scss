@@ -2,13 +2,13 @@
 #menu_header{
     width: 100%;
     text-align: center;
-    padding: 0 10%;
-    // height: 165px;
-    line-height: 100px;
+    padding: 0 3%;
     background: #F4B12F;
     position: fixed;
     top: 0;
-    z-index: 99;
+    // z-index: 1;
+    display: flex;
+    justify-content: space-between;
     input {
       height: 36%;
       margin: 0;
@@ -22,46 +22,48 @@
     }
     h1{
         height: 100%;
-        line-height: 100px;
+        line-height: 250%;
         color: #222;
         font-weight: 900;
         font-size:43px;
     }
     i{
-        position:absolute;
-        height: 100%;
+      line-height: 230%;
+        // position:absolute;
+        // height: 100%;
         width: 10%;
-        line-height:100px;
-        left: 2%;
+        // line-height:100px;
+        // left: 2%;
         color: #222;
     }
     b{
-        position:absolute;
-        height: 100%;
+      line-height: 230%;
+        // position:absolute;
+        // height: 100%;
         width: 10%;
-        line-height:100px;
-        right: 2%
+        // line-height:100px;
+        // right: 2%
     }
 
     // font-size:43px;
     @media (min-width: 3000px) {
       h1 {
-        font-size: 85px;
+        font-size: 115px;
       }
     }
     @media (max-width: 3000px) {
           h1 {
-            font-size: 75px;
+            font-size: 105px;
           }
         }
     @media (max-width: 2100px) {
           h1 {
-            font-size: 70px;
+            font-size: 95px;
           }
         }
     @media (max-width: 1600px) {
           h1 {
-            font-size: 65px;
+            font-size: 80px;
           }
         }
         

@@ -39,7 +39,7 @@
             <p>{{value.intro}}</p>
         </div>
         <ul>
-            <li>
+            <li @click="li_alert">
                 <div class="img" >
                 <img :src="value.src"  alt="" />
                 </div>
@@ -56,12 +56,28 @@
         </ul>
         </div>
     </div>
+    <!-- 弹窗 -->
+    <div class="AL" >
+    <div class="shade" @click="assmoMenu"></div>
+    <div class="alert">
+        <img src="../../img/022.jpg" height="640" width="1024" alt="" />
+        <div class="cctext">
+            <h3>富士山慕斯</h3>
+            <p>由奶油，巧克力，加融合卡融合而成,经过魔法加持，服用后血量回复百分之80%</p>
+            <div class="cctext_bottom">
+            <input type="text" placeholder="用餐备注"/>
+            <span @click="addMenu">加入菜单</span>
+            </div>
+        </div>
+    </div>
+    </div>
     </div>
 </template>
-
+<!-- 
 <script type="text/javascript">
 
     import './menu_main.scss'
+    import './menu_main.js'
     import http from '../../utils/httpClient.js'
 
     export default {
@@ -73,7 +89,21 @@
         methods: {
             on: function(e){
                 // 加入购物车效果
-                // $(e.target).
+                var h = parseInt($(e.target).closest('li').innerHeight());
+                var setW = parseInt($(e.target).innerWidth());
+                // w10%
+                var x = e.clientX-innerWidth/10-setW*2;
+                var y = innerHeight-e.clientY-h/2;
+                // 购物车速度
+                var speed = 1000;
+
+                $(e.target).after(
+                    $(e.target).clone().css({'left': setW, 'z-index': 9}).animate({top:-h/2, left:-setW*3}, speed/2, function(){
+                        $(this).animate({top: y, left: -x}, speed, function(){
+                            $(this).remove()
+                        })
+                    })
+                )
                 // 数字加一
                 var numB = $('.cart .cart_span').html();
                 $('.cart .cart_span').html(Number(numB)+1);
@@ -89,4 +119,5 @@
             })
         }
     }
-</script>
+</script> -->
+<script type="text/javascript" src="./menu_main.js"></script>

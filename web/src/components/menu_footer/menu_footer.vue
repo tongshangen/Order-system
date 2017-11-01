@@ -3,8 +3,12 @@
         <div class="cart">
             <span class="cart_span">0</span>
         </div>
-        <p class="money">￥0</p>
-        <p class="r_cart">已点菜品</p>
+        <div class="money">
+        <p>￥0</p> 
+        </div>
+        <div class="r_cart">
+        <p>确认菜单</p>
+        </div>
     </div>
 </template>
 

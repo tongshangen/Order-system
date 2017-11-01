@@ -10,20 +10,26 @@ html{
 }
 #menu_header,.test {
   height: 3.4375rem;
+.hear_cont {
+  width: 100%;
+  height: 15%;
 }
-
+#menu_header {
+  height: 15%;
+  width: 100%;
+}
 #menu-footer {
-  height: 80px;
+  height: 7.3%;
 }
 .cont {
   flex:1;
   overflow: hidden;
-  padding-bottom:80px;
   display: flex;
 }
 #menu_datagrid{
-  overflow: scroll;
-    // margin-top:165px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-bottom: 13%;
     height: 100%;
     width: 82%;
     // background: #ccc;
@@ -38,11 +44,14 @@ html{
         background: #fff;
         height: 0.979167rem;
         line-height:0.979167rem;
+        // height: 47px;
+        // line-height:47px;
         border-top:1px solid #333;
         i{
          display:inline-block;
          width: 6px;
-         height: 32px;
+         // height: 32px;
+         height: 65%;
          background: red;
          margin-right: 1%;
          margin-bottom: -5px;
@@ -63,6 +72,7 @@ html{
             width: 100%;
             background: #fff;
             height: 100%;
+            height-max: 100%;
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
@@ -73,14 +83,15 @@ html{
                 overflow:hidden;
                 img{
                     margin-left:-3%;
-                height: 100%;
-                width: 120%;
+                    height: 100%;
+                    width: 120%;
                 }
             }
             .centent{
-                flex:1;
+                // flex:1;
+                width: 60%;
                 padding: 0 2%;
-                overflow: hidden;
+                // overflow: hidden;
                 h2{
                     color:#000;
                     font-weight:600;
@@ -99,12 +110,10 @@ html{
                     font-size:48px;
                 }
                 i{
-                    // position:absolute;
-                    // top: 61%;
-                    // right: 6%;
                     float: right;
-                    padding: 3% 10% 0 0;
+                    padding: 3% 2% 0 0;
                     color: #26c472;
+                    padding: absolute;
                 }
                 
             }
@@ -162,9 +171,14 @@ html{
         font-size: 80px!important;
       }
     }
+		 @media (min-width: 2000px) {
+			 	.page {
+	        font-size: 70px!important;
+	      }
+		 }
     @media (max-width: 1600px) {
       .page {
-        font-size: 50px!important;
+        font-size: 60px!important;
       }
       ul .des{
         font-size: 48px!important;
@@ -232,7 +246,7 @@ html{
       }
     }
 
-// -----------
+// --nav-----
 #menu_left{
     overflow: scroll;
     background: #141414;
@@ -240,8 +254,6 @@ html{
     height-min: 100%;
     float: left;
     padding-bottom: 10%;
-    // margin-top:165px;
-    // overflow: hidden;
     ul{
       // overflow: scroll;
         padding-top:5%;
@@ -275,6 +287,7 @@ html{
             color:#EFBC0F;
         }
         @media (min-width: 3000px) {
+        	
           a {
             font-size: 90px;
           }
@@ -283,6 +296,7 @@ html{
           }
         }
         @media (max-width: 3000px) {
+        	
           a {
             font-size: 85px;
           }
@@ -337,8 +351,168 @@ html{
             font-size: 60px;
           }
         }
-
-
-
     }
+}
+// 弹窗
+.AL {
+  display: none;
+}
+.cont .shade{
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #111;
+  opacity: 0.85;
+}
+.cont .alert{
+  position: fixed;
+  z-index: 101;
+  height: 60%;
+  width: 84%;
+  left: 8%;
+  top: 20%;
+  background: #fff;
+  border-radius: 3%;
+  box-shadow: 0 0 0.4rem #fcfcfc;
+  overflow: hidden;
+  padding: 0;
+  img {
+    display: block;
+    width: 100%;
+    height: 60%;
+  }
+  .cctext {
+    width: 100%;
+    height: 40%;
+    padding: 6%;
+    
+    h3 {
+      font-size: 60px;
+      font-weight: 600;
+    }
+    p {
+      font-size: 44px;
+    }
+    .cctext_bottom {
+      padding-top: 2%;
+      display: flex;
+      justify-content: space-between;
+    }
+    input {
+      font-size: 57px;
+      padding-left: 2%;
+      width: 60%;
+      border: 0 none;
+      border: 1px solid #777;
+      border-radius: 5px;
+    }
+    span {
+      font-size: 57px;
+      float: right;
+      border: 2px solid #ccc;
+      background: #26c472;
+      padding: 0 3%;
+      color: #fcfcfc;
+    }
+  }
+}
+
+@media screen and (min-width: 800px){
+	.alert{
+		h3{
+			font-size: 88px!important;
+		}
+		p{
+			font-size: 63px!important;
+		}
+		input{
+			font-size: 80px!important;
+		}
+		span{
+			font-size: 80px!important;
+		}
+	}
+}
+@media screen and (min-width: 960px){
+	.alert{
+		h3{
+			font-size: 50px!important;
+		}
+		p{
+			font-size: 40px!important;
+		}
+		input{
+			font-size: 45px!important;
+		}
+		span{
+			font-size: 45px!important;
+		}
+	}
+}
+@media screen and (min-width: 1000px){
+	.alert{
+		h3{
+			font-size: 60px!important;
+		}
+		p{
+			font-size: 48px!important;
+		}
+		input{
+			font-size: 55px!important;
+		}
+		span{
+			font-size: 55px!important;
+		}
+	}
+}
+@media screen and (min-width: 1200px){
+	.alert{
+		h3{
+			font-size: 67px!important;
+		}
+		p{
+			font-size: 53px!important;
+		}
+		input{
+			font-size: 58px!important;
+		}
+		span{
+			font-size: 50px!important;
+		}
+	}
+}
+@media screen and (min-width: 2000px){
+	.alert{
+		h3{
+			font-size: 110px!important;
+		}
+		p{
+			font-size: 90px!important;
+		}
+		input{
+			font-size: 95px!important;
+		}
+		span{
+			font-size: 95px!important;
+		}
+	}
+}
+@media screen and (min-width: 2800px){
+	.alert{
+		h3{
+			font-size: 130px!important;
+		}
+		p{
+			font-size: 110px!important;
+		}
+		input{
+			font-size: 110px!important;
+		}
+		span{
+			font-size: 110px!important;
+		}
+	}
 }
