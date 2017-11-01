@@ -5,4 +5,6 @@ io.on("connection", function(client){
         console.log(data)
     })
 })
+// 菜单传输
+
 io.listen(777)

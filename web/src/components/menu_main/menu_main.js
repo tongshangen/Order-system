@@ -1,15 +1,16 @@
+// var socket = io.connect('ws://localhost:777');
 import './menu_main.scss'
 import http from '../../utils/httpClient.js'
 
-// 点击确认菜单
-$('#menu_footer .r_cart').mousedown(function(){
-    $(this).css('background', '#26c472')
-    console.log(54)
-})
-$('#menu_footer .r_cart').mouseup(function(){
-    $(this).css('background', '#fff')
-
-})
+// socket.on('clientTips',function(data){
+//     console.log(data);
+//     var Customer_call = $('.Customer_call');
+//     console.log(Customer_call);
+//     Customer_call.append(`<li><span>1号桌呼叫</span><span>客户要求：${data}</span><button type="button" class="btn btn-warning btn_del">点击处理</button></li>`)
+//     $('.btn_del').click(function(){
+//         $(this).parent().remove();
+//     })
+// })
 
 export default {
     data: function(){
