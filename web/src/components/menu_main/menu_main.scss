@@ -167,9 +167,14 @@ html{
         font-size: 80px!important;
       }
     }
+		 @media (min-width: 2000px) {
+			 	.page {
+	        font-size: 70px!important;
+	      }
+		 }
     @media (max-width: 1600px) {
       .page {
-        font-size: 50px!important;
+        font-size: 60px!important;
       }
       ul .des{
         font-size: 48px!important;
@@ -282,6 +287,7 @@ html{
             color:#EFBC0F;
         }
         @media (min-width: 3000px) {
+        	
           a {
             font-size: 90px;
           }
@@ -290,6 +296,7 @@ html{
           }
         }
         @media (max-width: 3000px) {
+        	
           a {
             font-size: 85px;
           }
@@ -383,11 +390,11 @@ html{
     padding: 6%;
     
     h3 {
-      font-size: 85%;
+      font-size: 60px;
       font-weight: 600;
     }
     p {
-      font-size: 60%;
+      font-size: 44px;
     }
     .cctext_bottom {
       padding-top: 2%;
@@ -395,7 +402,7 @@ html{
       justify-content: space-between;
     }
     input {
-      font-size: 60%;
+      font-size: 57px;
       padding-left: 2%;
       width: 60%;
       border: 0 none;
@@ -403,7 +410,7 @@ html{
       border-radius: 5px;
     }
     span {
-      font-size: 65%;
+      font-size: 57px;
       float: right;
       border: 2px solid #ccc;
       background: #26c472;
@@ -411,4 +418,101 @@ html{
       color: #fcfcfc;
     }
   }
+}
+
+@media screen and (min-width: 800px){
+	.alert{
+		h3{
+			font-size: 88px!important;
+		}
+		p{
+			font-size: 63px!important;
+		}
+		input{
+			font-size: 80px!important;
+		}
+		span{
+			font-size: 80px!important;
+		}
+	}
+}
+@media screen and (min-width: 960px){
+	.alert{
+		h3{
+			font-size: 50px!important;
+		}
+		p{
+			font-size: 40px!important;
+		}
+		input{
+			font-size: 45px!important;
+		}
+		span{
+			font-size: 45px!important;
+		}
+	}
+}
+@media screen and (min-width: 1000px){
+	.alert{
+		h3{
+			font-size: 60px!important;
+		}
+		p{
+			font-size: 48px!important;
+		}
+		input{
+			font-size: 55px!important;
+		}
+		span{
+			font-size: 55px!important;
+		}
+	}
+}
+@media screen and (min-width: 1200px){
+	.alert{
+		h3{
+			font-size: 67px!important;
+		}
+		p{
+			font-size: 53px!important;
+		}
+		input{
+			font-size: 58px!important;
+		}
+		span{
+			font-size: 50px!important;
+		}
+	}
+}
+@media screen and (min-width: 2000px){
+	.alert{
+		h3{
+			font-size: 110px!important;
+		}
+		p{
+			font-size: 90px!important;
+		}
+		input{
+			font-size: 95px!important;
+		}
+		span{
+			font-size: 95px!important;
+		}
+	}
+}
+@media screen and (min-width: 2800px){
+	.alert{
+		h3{
+			font-size: 130px!important;
+		}
+		p{
+			font-size: 110px!important;
+		}
+		input{
+			font-size: 110px!important;
+		}
+		span{
+			font-size: 110px!important;
+		}
+	}
 }
