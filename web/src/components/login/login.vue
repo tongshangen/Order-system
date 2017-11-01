@@ -1,7 +1,8 @@
 <template>
 		<div id="login_main">
 	        <p></p>
-	        <h1>后台管理登录 <span class="x">&times</span></h1>
+	        <!-- <h1>后台管理登录 <span class="x">&times</span></h1> -->
+	        <h1>后台管理登录</h1>
 	        <form class="form-horizontal">
 			  <div class="form-group">
 			    <label for="username" class="col-sm-3 control-label">用户名:</label>
@@ -32,6 +33,7 @@
 	import loading from '../loading/loading.vue'
 	import http from '../../utils/httpClient.js'
 	import router from '../../router/';
+	import loginjs from './login.js'
 
 	export default {
 		data(){
@@ -43,9 +45,30 @@
 		},
 		methods: {
 			loginHandler: function(){
+				 if(!$('#username').val()){
+		            alert('请输入用户名');
+		            $('#username').focus();
+		            return false;
+		        };
+		         if(!$('#password').val()){
+		            alert('请输入密码');
+		            $('#password').focus();
+		            return false;
+		        }
+				console.log(this.username,this.password)
 				http.post({url:'/login', params:{username: this.username, password: this.password},vm:this}).then(res => {
 					router.push({name: 'home'});
-				})
+				}),
+				function(response){
+		            if(response == false){
+		                alert('输入信息有误,请重新输入');
+		                return false;
+		            } else if(response == true){
+		                alert('登录成功');
+		                window.location.href='';
+		                console.log(response)
+		            }
+		        }
 			}
 		},
 		components: {
