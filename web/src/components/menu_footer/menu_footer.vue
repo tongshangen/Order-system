@@ -1,4 +1,5 @@
 <template>
+	
     <div id="menu-footer">
         <div class="cart">
             <span class="cart_span" @click="foodlist_append">0</span>
@@ -17,7 +18,9 @@
                 
             </ul>
         </div>
+        
     </div>
+   
 </template>
 
 <script type="text/javascript">
@@ -31,11 +34,17 @@
             foodlist_append: function(){
                 
                 var foodlist = $('.foodlist');
-                if(foodlist.css('opacity') == 0){
-                    foodlist.css('opacity','1');
+                if(foodlist.height() == 0){
+                    foodlist.css('height','9.3333rem');
+                    foodlist.css('top','-9.3333rem');
+                   	$('#zhezhao').show();
+                   	console.log($('#zhezhao'))
+                   
                 }
                 else{
-                    foodlist.css('opacity','0');
+                   foodlist.css('height','0rem');
+                    foodlist.css('top','0rem');
+                  	$('#zhezhao').hide();
                 }
             }
         }

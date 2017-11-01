@@ -1,6 +1,7 @@
 // 尾部
 #menu-footer {
-	position: relative;
+position: relative;
+z-index: 99;
   width: 100%;
   // text-align:center;
   padding: 0 0 0 10%;
@@ -60,15 +61,17 @@
         margin-bottom: 10px;
         
       }
-      display: none;
+//    display: none;
       transition: all 2s; 
       overflow: auto;
       position:absolute;
-      opacity: 0;
-      top: -9.3333rem;
+//    opacity: 0;
+      top: 0rem;
+//    top: -9.3333rem;
       left: 0rem;
       width: 8rem;
-      height: 9.3333rem;
+      height: 0rem;
+//    height: 9.3333rem;
       background-color: #000;
       color: #fff;
       border-top: 10px solid red;
@@ -94,4 +97,5 @@
       }
     }
 }
+
 

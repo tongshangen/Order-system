@@ -1,5 +1,6 @@
 <template>
     <div class="cont">
+    
     <!-- nav -->
     <div id="menu_left" >
         <ul @click="menu_leftNav">
@@ -66,6 +67,7 @@
             </li>
         </ul>
         </div>
+        <div id="zhezhao"></div>
     </div>
     <!-- 弹窗 -->
     <div class="AL" >
