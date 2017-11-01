@@ -48,7 +48,7 @@ export default {
             $(e.target).after(
                 $(e.target).clone().css({'left': setW, 'z-index': 9}).animate({top:-h/2, left:-setW*3}, speed/2, function(){
                     $(this).animate({top: y, left: -x}, speed, function(){
-                        $(this).remove()
+                        // $(this).remove()
                         // 数字加一
                         var numB = $('.cart .cart_span').html();
                         $('.cart .cart_span').html(Number(numB)+1);
