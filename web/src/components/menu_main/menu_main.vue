@@ -62,6 +62,8 @@
                     <div>
                     <p class="dex">￥<span>{{value.price}}</span></p>
                     <i class="glyphicon glyphicon-plus-sign" @click="on"></i>
+                    <input type="text" name="food_num" id="food_num" value="1" />
+                    <i class="glyphicon glyphicon-minus-sign" @click="on"></i>
                     </div>
                 </div>
             </li>

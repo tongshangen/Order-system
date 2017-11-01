@@ -46,7 +46,7 @@ export default {
             var speed = 1000;
 
             $(e.target).after(
-                $(e.target).clone().css({'left': setW, 'z-index': 9}).animate({top:-h/2, left:-setW*3}, speed/2, function(){
+                $(e.target).clone().css({'left': setW, 'z-index': 9, 'maigin-right': -50}).animate({top:-h/2, left:-setW*3}, speed/2, function(){
                     $(this).animate({top: y, left: -x}, speed, function(){
                         $(this).remove()
                         // 数字加一
