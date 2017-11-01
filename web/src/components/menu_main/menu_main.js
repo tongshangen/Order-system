@@ -2,6 +2,9 @@ import './menu_main.scss'
 import http from '../../utils/httpClient.js'
 
 export default {
+	
+	
+	
     data: function(){
         return {
             datagrid: []
@@ -31,18 +34,25 @@ export default {
             // 数字加一
             var numB = $('.cart .cart_span').html();
             $('.cart .cart_span').html(Number(numB)+1);
+            
+            //点击加号按钮，复制当前信息到购物车
+            var li = $(e.target).parent().parent().parent();
+            var copy_li=li.clone();
+            var ul = $('.foodlist_ul');         
+            ul.append(copy_li);
+            $('.foodlist_ul .glyphicon').remove();
         },
         // 弹窗出现
         li_alert: function(){
-            $('.AL').fadeIn()
+            $('.AL').fadeIn();
         },
         // 弹窗关闭
         addMenu: function(){
-            $('.AL').fadeOut()
+            $('.AL').fadeOut();
         },
         // 点击遮罩退出
         assmoMenu: function(){
-            $('.AL').fadeOut()
+            $('.AL').fadeOut();
         }
     },
     mounted: function(){
