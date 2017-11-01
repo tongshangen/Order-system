@@ -72,8 +72,17 @@
 </template>
 <script type="text/javascript">
 	import './order_page.scss'
-
+	import http from '../../utils/httpClient.js'
+	var socket = io.connect('ws://localhost:777');
+	socket.on('menu_over',function(data){
+	    console.log(data)
+	})
 	export default{
+		data: function(){
+			return {
+				datagrid: []
+			}
+		},
 		methods:{
 			urge: function(){
 				// console.log(666)
@@ -86,7 +95,6 @@
 				
 			},
 			allurge: function(){
-				console.log(333)
 				$('#myModal').modal();
 			},
 			goon: function(){
@@ -98,6 +106,12 @@
 		},
 		mounted: function(){
 			console.log(this)
+			http.post({
+			    url: "select"
+			}).then(res => {
+			    self.datagrid = res.data;
+			    console.log(res.data)
+			})
 		}
 	}
 </script>
