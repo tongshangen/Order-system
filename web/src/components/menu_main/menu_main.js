@@ -1,6 +1,7 @@
 // var socket = io.connect('ws://localhost:777');
 import './menu_main.scss'
 import http from '../../utils/httpClient.js'
+import loading from '../loading/loading.vue'
 
 // socket.on('clientTips',function(data){
 //     console.log(data);
@@ -19,8 +20,9 @@ export default {
             ALalert: {
                 src: '',
                 h3: '',
-                p: ''
+                p: ''   
             },
+            loadingShow: false
             // addMenu: {
             //     name: '',
             //     src: '',
@@ -100,10 +102,13 @@ export default {
         var self = this;
         http.post({
             url: "select"
-        }).then(res => {
+        ,vm:this}).then(res => {
             self.datagrid = res.data;
             console.log(res.data)
         })
+    },
+    components: {
+		loading
+	}
 
-    }
 }
