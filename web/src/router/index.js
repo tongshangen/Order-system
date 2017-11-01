@@ -59,6 +59,11 @@ var router = new VueRouter({
 			path: '/login',
 			name: 'login',
 			component: Login
+		},
+		{
+			path: '/pay',
+			name: 'pay',
+			component: PayComponent
 		}
 	]
 })
