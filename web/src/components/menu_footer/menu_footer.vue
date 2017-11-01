@@ -23,6 +23,5 @@
 <script type="text/javascript">
     import './menu_footer.scss'
     export default{
-    	methods:{}
     }
 </script>
