@@ -59,11 +59,13 @@
                 <div class="centent">
                     <h2>{{value.name}}</h2>
                     <p class="des">{{value.datails}}</p>
-                    <div>
+                    <div class="boxx">
                     <p class="dex">￥<span>{{value.price}}</span></p>
+                    <div class="butBox">
                     <i class="glyphicon glyphicon-plus-sign" @click="on"></i>
-                    <input type="text" name="food_num" id="food_num" value="1" />
+                    <input type="text" name="food_num" id="food_num" value="0" />
                     <i class="glyphicon glyphicon-minus-sign" @click="on"></i>
+                    </div>
                     </div>
                 </div>
             </li>

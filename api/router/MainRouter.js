@@ -1,5 +1,7 @@
 // 用户
 var userRouter = require("./Menu.js");
+//登录
+var LoginRouter = require("./LoginRouter.js")
 
 module.exports = {
     Register: function(app){
@@ -16,7 +18,10 @@ module.exports = {
             }
         });
         
+        //登录
+        LoginRouter.Register(app);
         // test
         userRouter.Register(app);
+        
     }
 }
