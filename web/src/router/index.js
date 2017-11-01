@@ -17,7 +17,6 @@ import Menu_main from '../components/menu_main/menu_main.vue'
 import Menu_footer from '../components/menu_footer/menu_footer.vue'
 
 import PayComponent from '../components/pay/pay.vue'
-import Login from '../components/login/login.vue'
 
 Vue.use(VueRouter)
 
@@ -76,11 +75,6 @@ var router = new VueRouter({
 			path: '/pay',
 			name: 'pay',
 			component: PayComponent
-		},
-		{
-			path: '/login',
-			name: 'login',
-			component: Login
 		}
 	]
 })

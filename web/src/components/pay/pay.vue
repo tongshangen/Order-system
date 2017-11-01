@@ -2,7 +2,7 @@
 	<div class="pay">
 		<div class="pay_header">
 
-			<router-link to="/order_page"><span class="glyphicon glyphicon-chevron-left"></span></router-link><span class="header_center">结算</span>
+			<router-link to="/order_page"><span class="glyphicon glyphicon-arrow-left"></span></router-link><span class="header_center">结算</span>
 
 		</div>
 
@@ -44,7 +44,6 @@
 			},
 			alipay: function(){
 				$('#myModal').modal();
-				
 			}
 		}
 	}
