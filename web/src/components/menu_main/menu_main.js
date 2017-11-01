@@ -11,7 +11,7 @@ export default {
     methods: {
         // 加号按钮
         on: function(e){
-            // 阻止浏览器默认行为
+            // 阻止浏览器默认行为index
             e.stopPropagation();
             // 加入购物车效果
             var h = parseInt($(e.target).closest('li').innerHeight());
@@ -37,7 +37,7 @@ export default {
         li_alert: function(){
             $('.AL').fadeIn()
             // 获取弹窗信息
-            console.log(index)
+            // console.log(index)
         },
         // 加入菜单弹窗关闭
         addMenu: function(){
