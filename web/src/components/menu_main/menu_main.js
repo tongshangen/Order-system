@@ -1,6 +1,7 @@
 import './menu_main.scss'
 import http from '../../utils/httpClient.js'
 
+
 export default {
     data: function(){
         return {
@@ -25,27 +26,39 @@ export default {
                 $(e.target).clone().css({'left': setW, 'z-index': 9}).animate({top:-h/2, left:-setW*3}, speed/2, function(){
                     $(this).animate({top: y, left: -x}, speed, function(){
                         $(this).remove()
+                        // 数字加一
+                        var numB = $('.cart .cart_span').html();
+                        $('.cart .cart_span').html(Number(numB)+1);
                     })
                 })
             )
-            // 数字加一
-            var numB = $('.cart .cart_span').html();
-            $('.cart .cart_span').html(Number(numB)+1);
         },
         // 弹窗出现
         li_alert: function(){
             $('.AL').fadeIn()
+            // 获取弹窗信息
+            console.log(index)
         },
-        // 弹窗关闭
+        // 加入菜单弹窗关闭
         addMenu: function(){
             $('.AL').fadeOut()
         },
         // 点击遮罩退出
         assmoMenu: function(){
             $('.AL').fadeOut()
+        },
+        // 点击nav变色
+        menu_leftNav: function(ev){
+           $('#menu_left li i').css('color','#EFBC0F')
+           $('#menu_left li a').css('color','#EFBC0F')
+           $(ev.target).closest('li').find('i').css('color','#fff')
+           $(ev.target).closest('li').find('a').css('color','#fff')
         }
     },
     mounted: function(){
+        $('#menu_left li').eq(0).find('i').css('color','#fff')
+        $('#menu_left li').eq(0).find('a').css('color','#fff')
+
         var self = this;
         http.post({
             url: "select"

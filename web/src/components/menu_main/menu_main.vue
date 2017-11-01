@@ -2,31 +2,41 @@
     <div class="cont">
     <!-- nav -->
     <div id="menu_left" >
-        <ul>
+        <ul @click="menu_leftNav">
             <li>
-                <i class="iconfont icon-yinliao"></i><a href="#0">热销</a>
+                <a href="#0">
+                <i class="iconfont icon-yinliao"></i><a>热销</a>
+                </a>
             </li>
             <li>
-                <i class="iconfont icon-yinliao"></i><a href="#5">优惠</a>
+                <a href="#5">
+                <i class="iconfont icon-yinliao"></i><a>优惠</a>
+                </a>
             </li>
             <li>
+                <a href="#10">
                 <i class="iconfont icon-iconyuanquanzhuanqu13"></i>
-                <a href="#10">中餐</a>
+                <a>中餐</a></a>
             </li>
             <li>
-                <i class="iconfont icon-xican"></i><a href="#15">西餐</a>
+                <a href="#15">
+                <i class="iconfont icon-xican"></i><a>西餐</a></a>
             </li>
             <li>
-                <i class="iconfont icon-shaokao"></i><a href="#20">烧烤</a>
+                <a href="#20">
+                <i class="iconfont icon-shaokao"></i><a href="#20">烧烤</a></a>
             </li>
             <li>
-                <i class="iconfont icon-xiaochi"></i><a href="#25">小吃</a>
+                <a href="#25">
+                <i class="iconfont icon-xiaochi"></i><a href="#25">小吃</a></a>
             </li>
             <li>
-                <i class="iconfont icon-tiandian"></i><a href="#30">甜品</a>
+                <a href="#30">
+                <i class="iconfont icon-tiandian"></i><a href="#30">甜品</a></a>
             </li>
             <li>
-                <i class="iconfont icon-yinliao"></i><a href="#35">饮料</a>
+                <a href="#35">
+                <i class="iconfont icon-yinliao"></i><a href="#35">饮料</a></a>
             </li>
         </ul>
     </div>
