@@ -59,14 +59,13 @@
 				http.post({url:'/login', params:{username: this.username, password: this.password},vm:this}).then(res => {
 					router.push({name: 'home'});
 				}),
-				function(response){
-		            if(response == false){
+				function(res){
+		            if(res == false){
 		                alert('输入信息有误,请重新输入');
 		                return false;
-		            } else if(response == true){
+		            } else if(res == true){
 		                alert('登录成功');
-		                window.location.href='';
-		                console.log(response)
+		                console.log(res)
 		            }
 		        }
 			}
