@@ -1,11 +1,17 @@
 import './menu_main.scss'
 import http from '../../utils/httpClient.js'
 
+// 点击确认菜单
+$('#menu_footer .r_cart').mousedown(function(){
+    $(this).css('background', '#26c472')
+    console.log(54)
+})
+$('#menu_footer .r_cart').mouseup(function(){
+    $(this).css('background', '#fff')
+
+})
 
 export default {
-	
-	
-	
     data: function(){
         return {
             datagrid: [],
@@ -13,7 +19,14 @@ export default {
                 src: '',
                 h3: '',
                 p: ''
-            }
+            },
+            // addMenu: {
+            //     name: '',
+            //     src: '',
+            //     count: '',
+            //     price: '',
+            //     Znumber: '08'
+            // }
         }
     },
     methods: {
@@ -40,19 +53,17 @@ export default {
 
                         //点击加号按钮，复制当前信息到购物车
                         var li = $(e.target).parent().parent().parent();
+                        var car_idx = $(e.target).closest('.gai').index()
                         var copy_li=li.clone();
                         var ul = $('.foodlist_ul');         
                         ul.append(copy_li);
+                        ul.find('h2').append($(`<span style="opacity: 0">${car_idx}</span>`));
                         $('.foodlist_ul .glyphicon').remove();
                     })
                 })
 
 
             )
-        },
-        // 弹窗出现
-        li_alert: function(){
-            $('.AL').fadeIn();
         },
         // 弹窗出现
         li_alert: function(e){
@@ -65,10 +76,6 @@ export default {
         },
         // 加入菜单弹窗关闭
         addMenu: function(){
-            $('.AL').fadeOut();
-        },
-        // 点击遮罩退出
-        assmoMenu: function(){
             $('.AL').fadeOut();
 
         },
@@ -88,6 +95,7 @@ export default {
         $('#menu_left li').eq(0).find('i').css('color','#fff')
         $('#menu_left li').eq(0).find('a').css('color','#fff')
 
+
         var self = this;
         http.post({
             url: "select"
@@ -95,5 +103,6 @@ export default {
             self.datagrid = res.data;
             console.log(res.data)
         })
+
     }
 }

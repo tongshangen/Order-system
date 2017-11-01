@@ -10,7 +10,7 @@ module.exports = {
         app.use(bodyparser.urlencoded({ extended: false }));
 
 
-        // 增add
+        // 客户确认菜单增add
         app.post("/add", function(request, response){
             db.add("insert into test (name, miaos) values('csx', '123456')" , function(result){
                 console.log(result)
