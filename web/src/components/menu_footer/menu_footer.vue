@@ -24,8 +24,13 @@
 <script type="text/javascript">
     import './menu_footer.scss'
     export default{
+        data: function(){
+            return {
+            }
+        },
         methods:{
             foodlist_append: function(){
+                
                 var foodlist = $('.foodlist');
                 if(foodlist.css('opacity') == 0){
                     foodlist.css('opacity','1');

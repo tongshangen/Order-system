@@ -53,7 +53,13 @@
     align-items: center;
   }
     .foodlist{
-      .verify{}
+      .verify{
+        padding-left: 0.3rem;
+        border-bottom: 3px solid #fff;
+        margin-bottom: 10px;
+        
+      }
+      display: none;
       transition: all 2s; 
       overflow: auto;
       position:absolute;
@@ -66,6 +72,7 @@
       color: #fff;
       border-top: 10px solid red;
       border-right: 10px solid red;
+      border-top-right-radius: 1.5rem;
       ul{
         width: 100%;
         li{

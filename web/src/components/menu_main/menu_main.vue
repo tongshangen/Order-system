@@ -42,6 +42,7 @@
     </div>
     <!-- 内容 -->
     <div id="menu_datagrid">
+
         <div class="gai" v-for="(value, index) in datagrid" >
             
         <div class="page"  v-if="index%5 == 0" :id="index">
