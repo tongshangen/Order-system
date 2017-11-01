@@ -1,5 +1,5 @@
 <template>
-		<div id="main">
+		<div id="login_main">
 	        <p></p>
 	        <h1>后台管理登录 <span class="x">&times</span></h1>
 	        <form class="form-horizontal">
