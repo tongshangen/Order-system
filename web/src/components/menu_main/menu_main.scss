@@ -8,6 +8,8 @@ html{
     flex-direction: column;
     // overflow: all;
 }
+#menu_header,.test {
+  height: 3.4375rem;
 .hear_cont {
   width: 100%;
   height: 15%;
@@ -40,7 +42,9 @@ html{
         padding:0 3%;
         font-size:32px;
         background: #fff;
-        height: 47px;
+        height: 0.979167rem;
+        line-height:0.979167rem;
+        // height: 47px;
         // line-height:47px;
         border-top:1px solid #333;
         i{
