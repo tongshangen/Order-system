@@ -95,6 +95,9 @@
 			pay: function(){
 				// console.log(555)
 			}
+		},
+		mounted: function(){
+			console.log(this)
 		}
 	}
 </script>

@@ -57,7 +57,7 @@
                     this.idx.push(idx);
                 }
                 // 存入购物车
-                console.log(this.idx)
+                // console.log(this.$parent.$el)
                 console.log(this.$parent.$children[2].idx)
                 
             }
