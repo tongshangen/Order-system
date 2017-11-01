@@ -70,10 +70,10 @@
     <div class="AL" >
     <div class="shade" @click="assmoMenu"></div>
     <div class="alert">
-        <img src="../../img/022.jpg" height="640" width="1024" alt="" />
+        <img :src="ALalert.src" height="640" width="1024" alt="" />
         <div class="cctext">
-            <h3>富士山慕斯</h3>
-            <p>由奶油，巧克力，加融合卡融合而成,经过魔法加持，服用后血量回复百分之80%</p>
+            <h3>{{ALalert.h3}}</h3>
+            <p>{{ALalert.p}}</p>
             <div class="cctext_bottom">
             <input type="text" placeholder="用餐备注"/>
             <span @click="addMenu">加入菜单</span>
