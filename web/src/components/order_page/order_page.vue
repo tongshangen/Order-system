@@ -2,7 +2,7 @@
 	<div class="order">
 		<div class="order_header">
 
-			<router-link to="/"><span class="glyphicon glyphicon-arrow-left" @click="back"></span></router-link><span class="header_center">订单页</span>
+			<router-link to="/"><span class="glyphicon glyphicon-chevron-left" @click="back"></span></router-link><span class="header_center">订单页</span>
 
 		</div>
 		<div class="order_center">
@@ -58,7 +58,16 @@
 
 
 		</div>
-		<div class="order_footer"><button type="button" class="btn btn-default btn-lg active" @click="allurge">整单催菜</button><button type="button" class="btn btn-default btn-lg active" @click="goon">继续点菜</button><router-link to="/pay" ><button type="button" class="btn btn-default btn-lg active last" @click="pay">结算</button></router-link></div>
+		<div class="order_footer"><button type="button" class="btn btn-default btn-lg active" data-toggle="modal" data-target=".bs-example-modal-lg" @click="allurge">整单催菜</button><router-link to="/menu"><button type="button" class="btn btn-default btn-lg active" @click="goon">继续点菜</button></router-link><router-link to="/pay" ><button type="button" class="btn btn-default btn-lg active last" @click="pay">结算</button></router-link></div>
+
+
+		<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+		  <div class="modal-dialog modal-lg" role="document">
+		    <div class="modal-content">
+		     	<p>请稍等，我们正在为您努力加快速度...</p>
+		    </div>
+		  </div>
+		</div>
 	</div>
 </template>
 <script type="text/javascript">
@@ -77,10 +86,11 @@
 				
 			},
 			allurge: function(){
-				// console.log(222)
+				console.log(333)
+				$('#myModal').modal();
 			},
 			goon: function(){
-				// console.log(111)
+				
 			},
 			pay: function(){
 				// console.log(555)

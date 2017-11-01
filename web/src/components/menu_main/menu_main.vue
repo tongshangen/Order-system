@@ -2,31 +2,41 @@
     <div class="cont">
     <!-- nav -->
     <div id="menu_left" >
-        <ul>
+        <ul @click="menu_leftNav">
             <li>
-                <i class="iconfont icon-yinliao"></i><a href="#0">热销</a>
+                <a href="#0">
+                <i class="iconfont icon-yinliao"></i><a>热销</a>
+                </a>
             </li>
             <li>
-                <i class="iconfont icon-yinliao"></i><a href="#5">优惠</a>
+                <a href="#5">
+                <i class="iconfont icon-yinliao"></i><a>优惠</a>
+                </a>
             </li>
             <li>
+                <a href="#10">
                 <i class="iconfont icon-iconyuanquanzhuanqu13"></i>
-                <a href="#10">中餐</a>
+                <a>中餐</a></a>
             </li>
             <li>
-                <i class="iconfont icon-xican"></i><a href="#15">西餐</a>
+                <a href="#15">
+                <i class="iconfont icon-xican"></i><a>西餐</a></a>
             </li>
             <li>
-                <i class="iconfont icon-shaokao"></i><a href="#20">烧烤</a>
+                <a href="#20">
+                <i class="iconfont icon-shaokao"></i><a href="#20">烧烤</a></a>
             </li>
             <li>
-                <i class="iconfont icon-xiaochi"></i><a href="#25">小吃</a>
+                <a href="#25">
+                <i class="iconfont icon-xiaochi"></i><a href="#25">小吃</a></a>
             </li>
             <li>
-                <i class="iconfont icon-tiandian"></i><a href="#30">甜品</a>
+                <a href="#30">
+                <i class="iconfont icon-tiandian"></i><a href="#30">甜品</a></a>
             </li>
             <li>
-                <i class="iconfont icon-yinliao"></i><a href="#35">饮料</a>
+                <a href="#35">
+                <i class="iconfont icon-yinliao"></i><a href="#35">饮料</a></a>
             </li>
         </ul>
     </div>
@@ -60,10 +70,10 @@
     <div class="AL" >
     <div class="shade" @click="assmoMenu"></div>
     <div class="alert">
-        <img src="../../img/022.jpg" height="640" width="1024" alt="" />
+        <img :src="ALalert.src" height="640" width="1024" alt="" />
         <div class="cctext">
-            <h3>富士山慕斯</h3>
-            <p>由奶油，巧克力，加融合卡融合而成,经过魔法加持，服用后血量回复百分之80%</p>
+            <h3>{{ALalert.h3}}</h3>
+            <p>{{ALalert.p}}</p>
             <div class="cctext_bottom">
             <input type="text" placeholder="用餐备注"/>
             <span @click="addMenu">加入菜单</span>

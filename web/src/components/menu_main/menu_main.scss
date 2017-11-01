@@ -273,6 +273,10 @@ html{
             border-bottom:1px solid #fff;
             padding-bottom: 6%;
             color:#EFBC0F;
+            text-decoration:none;
+            a{
+              border-bottom:none;
+            }
         }
         i{
             display: block;
