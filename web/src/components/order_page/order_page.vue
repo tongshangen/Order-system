@@ -78,21 +78,13 @@
 	    console.log(data)
 	})
 	export default{
-<<<<<<< HEAD
+
 		data: function(){
 			return {
 				datagrid: []
 			}
 		},
-=======
 
-		data: function(){
-			return{
-				dataform: [],
-			}
-		},
-
->>>>>>> 8fd6e3fb1b51ed3d8561b04a90a0fd99b41f770b
 		methods:{
 			urge: function(){
 				// console.log(666)
@@ -114,7 +106,7 @@
 				// console.log(555)
 			}
 		},
-<<<<<<< HEAD
+
 		mounted: function(){
 			console.log(this)
 			http.post({
@@ -123,10 +115,7 @@
 			    self.datagrid = res.data;
 			    console.log(res.data)
 			})
-=======
-		mounted:function(){
-			console.log(this.$parent.$parent)
->>>>>>> 8fd6e3fb1b51ed3d8561b04a90a0fd99b41f770b
+
 		}
 	}
 </script>

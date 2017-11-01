@@ -8,7 +8,6 @@ html{
     flex-direction: column;
     // overflow: all;
 }
-<<<<<<< HEAD
 #zhezhao{
 	position: absolute;
 	display: none;
@@ -20,8 +19,7 @@ html{
 	opacity: 0.5;
 	z-index: 98;
 }
-=======
->>>>>>> 9ff0b8222afb8904097d6cabaf4d1953c0367074
+
 .hear_cont {
   width: 100%;
   height: 15%;
@@ -477,7 +475,6 @@ html{
 	}
 }
 @media screen and (min-width: 800px){
-<<<<<<< HEAD
 	.alert{
 		h3{
 			font-size: 55px!important;
@@ -492,22 +489,8 @@ html{
 			font-size: 40px!important;
 		}
 	}
-=======
-  .alert{
-    h3{
-      font-size: 88px!important;
-    }
-    p{
-      font-size: 63px!important;
-    }
-    input{
-      font-size: 80px!important;
-    }
-    span{
-      font-size: 80px!important;
-    }
-  }
->>>>>>> 9ff0b8222afb8904097d6cabaf4d1953c0367074
+  
+
 }
 @media screen and (min-width: 960px){
   .alert{
@@ -558,7 +541,6 @@ html{
   }
 }
 @media screen and (min-width: 2000px){
-<<<<<<< HEAD
 	.alert{
 		h3{
 			font-size: 100px!important;
@@ -573,22 +555,7 @@ html{
 			font-size: 90px!important;
 		}
 	}
-=======
-  .alert{
-    h3{
-      font-size: 110px!important;
-    }
-    p{
-      font-size: 90px!important;
-    }
-    input{
-      font-size: 95px!important;
-    }
-    span{
-      font-size: 95px!important;
-    }
-  }
->>>>>>> 9ff0b8222afb8904097d6cabaf4d1953c0367074
+  
 }
 @media screen and (min-width: 2800px){
   .alert{
