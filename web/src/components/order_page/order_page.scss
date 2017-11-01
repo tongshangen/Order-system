@@ -10,8 +10,8 @@ html, body {
 
 	.order_header{
 		width: 100%;
-		height: 1.0rem;
-		line-height: 1.0rem;
+		height: 1.5rem;
+		line-height: 1.5rem;
 		display:flex;
 		background-color: #141414;
 		color: #fff;
@@ -21,7 +21,7 @@ html, body {
 		.glyphicon{
 			position: absolute;
 			left:0.2rem;
-			top:0.5rem;
+			top:0.75rem;
 			color:#fff;
 			transform:translateY(-50%);
 		}
@@ -40,7 +40,7 @@ html, body {
         	padding: 10px 0;
         	width: 100%;
         	height: 0.6rem;
-        	font-size: 0.48rem;
+        	font-size: 0.62rem;
        		border-bottom: 0.01rem solid #ddd;
         	display: flex;
 			span{
@@ -58,10 +58,10 @@ html, body {
         	li{margin-bottom: 0.3rem;
 				table{width: 100%;
 					tr{width: 100%;
-						td{	font-size: 0.38rem;
+						td{	font-size: 0.48rem;
 							img{padding: 0.2rem 0 0 0.5rem; width: 3rem;height: 2.5rem;}
 							button{
-								font-size: 0.38rem;
+								font-size: 0.56rem;
 							}
 						}
 					}
@@ -78,7 +78,7 @@ html, body {
 		justify-content: center;
         align-items:center;
 		.btn{
-			width: 26%;
+			width: 2.5rem;
 			margin: 0.2rem;
 			text-align: center;
 			font-size: 0.52rem;
@@ -87,7 +87,7 @@ html, body {
 			border-right:0.02rem solid #ccc;
 		}
 
-		.last{width: 2.5rem;}
+		// .last{width: 2.5rem;}
 	}
 
 }

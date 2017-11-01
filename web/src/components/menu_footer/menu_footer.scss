@@ -1,5 +1,6 @@
 // 尾部
 #menu-footer {
+	position: relative;
   width: 100%;
   // text-align:center;
   padding: 0 0 0 10%;
@@ -18,7 +19,7 @@
     background: #ccc;
     position: absolute;
     bottom: 0;
-    border: 8px solid #F4B12F;
+    border: 0.1066rem solid #F4B12F;
     display: flex;
     align-items: center;
     z-index: 2;
@@ -45,7 +46,7 @@
     width: 35%;
     height: 100%;
     font-size: 90%;
-    border-top: 8px solid #26c472;
+    border-top: 0.1066rem solid #26c472;
     align-items: center;
     justify-content: center;
   }

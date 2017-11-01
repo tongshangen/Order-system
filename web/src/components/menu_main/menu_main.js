@@ -3,6 +3,9 @@ import http from '../../utils/httpClient.js'
 
 
 export default {
+	
+	
+	
     data: function(){
         return {
             datagrid: [],
@@ -48,6 +51,10 @@ export default {
             )
         },
         // 弹窗出现
+        li_alert: function(){
+            $('.AL').fadeIn();
+        },
+        // 弹窗出现
         li_alert: function(e){
             $('.AL').fadeIn()
             // 获取弹窗信息
@@ -58,6 +65,10 @@ export default {
         },
         // 加入菜单弹窗关闭
         addMenu: function(){
+            $('.AL').fadeOut();
+        },
+        // 点击遮罩退出
+        assmoMenu: function(){
             $('.AL').fadeOut();
 
         },
