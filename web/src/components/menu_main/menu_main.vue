@@ -68,6 +68,7 @@
         </ul>
         </div>
         <div id="zhezhao"></div>
+        <loading v-show="loadingShow"></loading>
     </div>
     <!-- 弹窗 -->
     <div class="AL" >
@@ -84,7 +85,9 @@
         </div>
     </div>
     </div>
+    
     </div>
+    
 </template>
 <!-- 
 <script type="text/javascript">

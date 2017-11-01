@@ -1,6 +1,6 @@
 import './menu_main.scss'
 import http from '../../utils/httpClient.js'
-
+import loading from '../loading/loading.vue'
 
 export default {
 	
@@ -13,7 +13,10 @@ export default {
                 src: '',
                 h3: '',
                 p: ''
-            }
+                
+            },
+            loadingShow: false
+            
         }
     },
     methods: {
@@ -91,9 +94,12 @@ export default {
         var self = this;
         http.post({
             url: "select"
-        }).then(res => {
+        ,vm:this}).then(res => {
             self.datagrid = res.data;
             console.log(res.data)
         })
-    }
+    },
+    components: {
+		loading
+	}
 }
