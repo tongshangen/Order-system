@@ -72,7 +72,10 @@
 </template>
 <script type="text/javascript">
 	import './order_page.scss'
-
+	var socket = io.connect('ws://localhost:777');
+	socket.on('menu_over',function(data){
+	    console.log(data)
+	})
 	export default{
 		methods:{
 			urge: function(){

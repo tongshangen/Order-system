@@ -1,17 +1,7 @@
-// var socket = io.connect('ws://localhost:777');
+
 import './menu_main.scss'
 import http from '../../utils/httpClient.js'
-import loading from '../loading/loading.vue'
 
-// socket.on('clientTips',function(data){
-//     console.log(data);
-//     var Customer_call = $('.Customer_call');
-//     console.log(Customer_call);
-//     Customer_call.append(`<li><span>1号桌呼叫</span><span>客户要求：${data}</span><button type="button" class="btn btn-warning btn_del">点击处理</button></li>`)
-//     $('.btn_del').click(function(){
-//         $(this).parent().remove();
-//     })
-// })
 
 export default {
     data: function(){
@@ -20,9 +10,8 @@ export default {
             ALalert: {
                 src: '',
                 h3: '',
-                p: ''   
+                p: ''
             },
-            loadingShow: false
             // addMenu: {
             //     name: '',
             //     src: '',
@@ -102,13 +91,10 @@ export default {
         var self = this;
         http.post({
             url: "select"
-        ,vm:this}).then(res => {
+        }).then(res => {
             self.datagrid = res.data;
             console.log(res.data)
         })
-    },
-    components: {
-		loading
-	}
 
+    }
 }

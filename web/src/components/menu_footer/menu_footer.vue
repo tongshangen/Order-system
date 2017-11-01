@@ -25,6 +25,8 @@
 
 <script type="text/javascript">
     import './menu_footer.scss'
+    var socket = io.connect('ws://localhost:777');
+    
     export default{
         data: function(){
             return {
@@ -56,6 +58,7 @@
                     var idx = $('.foodlist ul li').eq(i).find('h2 span').html();
                     this.idx.push(idx);
                 }
+                socket.emit('menu_cd',this.idx);
                 // 存入购物车
                 // console.log(this.$parent.$el)
                 console.log(this.$parent.$children[2].idx)
