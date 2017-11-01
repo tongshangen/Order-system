@@ -6,30 +6,30 @@
 
 		</div>
 		<div class="order_center">
-			<div class="order_mid_top"><span>订单:10001</span><span>数量:3</span><span>总计：189元</span></div><br>
-			<ul>
+			<div class="order_mid_top"><span>订单:</span><span>数量:</span><span>总计：元</span></div><br>
+			<ul class="order_all" v-for="(value, index) in dataform">
 				<li>
 					<table>
 						<tr>
-							<td>1</td>
-							<td>白切鸡</td>
-							<td>36.0</td>
-							<td>2</td>
+							<td>{{value.id}}</td>
+							<td>{{value.name}}</td>
+							<td>{{value.price}}</td>
+							<td>{{value.number}}</td>
 						</tr>
 						<tr>
-							<td colspan="2"><img src="../../img/001.jpg"></td>
+							<td colspan="2"><img :src="value.src"  alt=""></td>
 							<td><button type="button" class="btn btn-default btn-lg active" @click="urge">催菜</button></td>
 							<td><button type="button" class="btn btn-default btn-lg active" @click="quit">退菜</button></td>
 						</tr>
 					</table>
 				</li>
-				<li>
+				<!-- <li>
 					<table>
 						<tr>
-							<td>2</td>
-							<td>白切鸡</td>
-							<td>36.0</td>
-							<td>2</td>
+							<td>{{value.id}}</td>
+							<td>{{value.name}}</td>
+							<td>{{value.price}}</td>
+							<td>{{value.number}}</td>
 						</tr>
 						<tr>
 							<td colspan="2"><img src="../../img/002.jpg"></td>
@@ -41,10 +41,10 @@
 				<li>
 					<table>
 						<tr>
-							<td>3</td>
-							<td>白切鸡</td>
-							<td>36.0</td>
-							<td>2</td>
+							<td>{{value.id}}</td>
+							<td>{{value.name}}</td>
+							<td>{{value.price}}</td>
+							<td>{{value.number}}</td>
 						</tr>
 						<tr>
 							<td colspan="2"><img src="../../img/003.jpg"></td>
@@ -52,7 +52,7 @@
 							<td><button type="button" class="btn btn-default btn-lg active" @click="quit">退菜</button></td>
 						</tr>
 					</table>
-				</li>
+				</li> -->
 				
 			</ul>
 
@@ -78,11 +78,13 @@
 	    console.log(data)
 	})
 	export default{
+
 		data: function(){
 			return {
 				datagrid: []
 			}
 		},
+
 		methods:{
 			urge: function(){
 				// console.log(666)
@@ -104,6 +106,7 @@
 				// console.log(555)
 			}
 		},
+
 		mounted: function(){
 			console.log(this)
 			http.post({
@@ -112,6 +115,7 @@
 			    self.datagrid = res.data;
 			    console.log(res.data)
 			})
+
 		}
 	}
 </script>
