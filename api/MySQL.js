@@ -9,7 +9,7 @@ var mysql = require('mysql');
 
 // 创建连接池
 var pool = mysql.createPool({
-  host     : '10.3.131.10',
+  host     : 'localhost',
   user     : 'root',
   password : '',
   database: 'order'
@@ -34,7 +34,6 @@ module.exports = {
     },
     // 查
     select: function(tsql, callback){
-    	console.log(88);
         pool.query(tsql, function(error, _data){
             if (error) throw error;
             callback(_data)

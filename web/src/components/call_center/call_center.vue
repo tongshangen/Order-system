@@ -1,6 +1,10 @@
 <template>
 	<div class="call_center">
-		<p class="call_title">呼叫中心</p>
+		<div class="call_title">
+			<p>呼叫中心</p>
+			<span class="call_out" @click="out">退出</span>
+		</div>
+		
 		<ul class="Customer_call">
 			<li>客户呼叫</li>
 			<!--<li><span>1号桌呼叫</span><span>客户要求：一包纸巾</span><button type="button" class="btn btn-warning" @click="handle">点击处理</button></li>
@@ -25,6 +29,7 @@
 </template>
 
 <script>
+	import router from '../../router/';
 	import './call_center.scss'
 	var socket = io.connect('ws://localhost:777');
 	socket.on('clientTips',function(data){
@@ -40,6 +45,9 @@
 		methods: {
 			handle:function(e){
 				$(e.target).parent().remove();
+			},
+			out:function(){
+				router.push({name: 'login'});
 			}
 		}
 	}

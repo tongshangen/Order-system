@@ -13,10 +13,13 @@ module.exports = {
         
 //      // post请求--查找用户
         app.post("/login", function(request, response){
-        	console.log(777);
         	console.log(request.body);
-            // select 查询， from 找哪个库, test 库名 ， limit 查找条数 10条
-            db.select('select * from user',function(returnData){
+        	var username = `'${request.body.username}'`;
+        	var password = `'${request.body.password}'`;
+        	var condition = `select * from user where username=${username} and password=${password}`;
+           	console.log(condition);
+           // select 查询， from 找哪个库, test 库名 ， limit 查找条数 10条
+            db.select(condition,function(returnData){
                 // console.log(returnData)
                 response.send(returnData);
             })
