@@ -27,7 +27,6 @@
 <script>
 	import './call_center.scss'
 	var socket = io.connect('ws://localhost:777');
-	console.log(66);
 	socket.on('clientTips',function(data){
 		console.log(data);
 		var Customer_call = $('.Customer_call');

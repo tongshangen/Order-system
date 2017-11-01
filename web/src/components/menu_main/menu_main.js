@@ -1,7 +1,16 @@
-
 import './menu_main.scss'
 import http from '../../utils/httpClient.js'
+import loading from '../loading/loading.vue'
 
+// 点击确认菜单
+$('#menu_footer .r_cart').mousedown(function(){
+    $(this).css('background', '#26c472')
+    console.log(54)
+})
+$('#menu_footer .r_cart').mouseup(function(){
+    $(this).css('background', '#fff')
+
+})
 
 export default {
     data: function(){
@@ -10,8 +19,9 @@ export default {
             ALalert: {
                 src: '',
                 h3: '',
-                p: ''
+                p: ''   
             },
+            loadingShow: false
             // addMenu: {
             //     name: '',
             //     src: '',
@@ -91,10 +101,13 @@ export default {
         var self = this;
         http.post({
             url: "select"
-        }).then(res => {
+        ,vm:this}).then(res => {
             self.datagrid = res.data;
             console.log(res.data)
         })
+    },
+    components: {
+		loading
+	}
 
-    }
 }
