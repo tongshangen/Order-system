@@ -1,7 +1,14 @@
 <template>
 	<div class="cook">
 		<div class="cook_page clear">
-			<p class="cook_title">xx餐厅后厨系统</p>
+			
+			<div class="cook_title">
+				<p>
+					xx餐厅后厨系统
+				</p>
+				<span class="call_out" @click="out">退出</span>
+			</div>
+			
 			<table class="table table-striped table-bordered">
 				<thead>
 					<tr>
@@ -83,21 +90,33 @@
 
 <script type="text/javascript">
 	import './cook.scss'
-	
+	import router from '../../router/'
+	var socket = io.connect('ws://localhost:777');
+	var arr;
 	//$children
 	export default {
-
-		
 		methods: {
 			
 			make: function(event){
 				if($(event.target).html() == "上菜"){
+					console.log($(event.target).parent().parent().children());
+					var tr = $(event.target).parent().parent().children();
+					var taihao = tr[1].innerHTML;
+					var caiming = tr[2].innerHTML;
+					arr = [];
+					arr.push(taihao);
+					arr.push(caiming);					
+					socket.emit('serving', arr);
 					$(event.target).parent().parent().remove();
+					return;
 				}
 				$(event.target).html('上菜');
 				$(event.target).removeClass('btn-info');
 				$(event.target).addClass('btn-success');
 				$(event.target).parent().prev().html('正在制作');
+			},
+			out:function(){
+				router.push({name: 'login'});
 			}
 		}
 	}

@@ -1,11 +1,20 @@
 .cook_page{
 	.cook_title{
+		position: relative;
 		font-size: 20px;
 		height: 50px;
 		line-height: 50px;
 		background-color: #141414;
 		color: white;
 		text-align: center;
+		.call_out{
+			position: absolute;
+			right: 50px;
+			top: 0px;
+			color: orange;
+			font-size: 16px;
+			cursor:pointer;
+		}
 	}
 	.table{
 		font-size: 20px;
@@ -15,6 +24,9 @@
 			}
 			td{
 				text-align: center;
+				button{
+					font-size: 20px;
+				}
 			}
 			&:hover{
 				background-color: #F4B12F;

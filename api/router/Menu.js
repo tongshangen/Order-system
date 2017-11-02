@@ -30,7 +30,10 @@ module.exports = {
                 response.send(returnData);
             })
         });
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2e18f247568e491326151383bd27413589a3cd47
         // 改
         app.post("/update", function(request, response){
             db.update("update test set cost='3' where name='csx'" , function(result){

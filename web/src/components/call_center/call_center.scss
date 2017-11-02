@@ -1,19 +1,28 @@
 .call_center{
-	p.call_title{
+	.call_title{
+		position: relative;
 		font-size: 20px;
 		text-align: center;
 		height: 50px;
 		line-height: 50px;
 		background-color: #141414;
 		color: white;
+		.call_out{
+			position: absolute;
+			right: 50px;
+			top: 0px;
+			color: orange;
+			font-size: 16px;
+			cursor:pointer;
+		}
 	}
 	ul{
 		width: 50%;
 		float: left;
 		font-size: 20px;
 		
-		&:first-of-type{
-			border-right: 2px solid #ccc;
+		&:last-of-type{
+			border-left: 2px solid #ccc;
 		}
 		&:last-of-type{
 			li{
@@ -46,6 +55,7 @@
 				box-sizing: border-box;
 				margin-right: 10px;
 				margin-top: 5px;
+				font-size: 15px;
 			}
 			span{
 				padding-left: 20px;
