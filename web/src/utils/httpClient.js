@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-var baseUrl = 'http://10.3.131.10:666/' || 'http://localhost:666/';
+var baseUrl = 'http://10.3.131.8:666/' || 'http://localhost:666/';
 var filterUrl = function(url){
 	if(url.startsWith('http')){
 		return url;
@@ -29,6 +29,7 @@ export default {
 		if(opts.vm){
 			opts.vm[opts.loading || 'loadingShow'] = true;
 		}
+			console.log(opts.params)
 		axios.post(filterUrl(opts.url), opts.params).then(function(response){
 			if(opts.vm){
 				opts.vm[opts.loading || 'loadingShow'] = false;
@@ -36,6 +37,7 @@ export default {
 			resolve(response);
 		}).catch(function(error){
 			if(opts.vm){
+				alert('请求有误');
 				opts.vm[opts.loading || 'loadingShow'] = false;
 			}			
 			reject(error);

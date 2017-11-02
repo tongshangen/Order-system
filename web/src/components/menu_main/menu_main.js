@@ -22,7 +22,8 @@ export default {
                 p: ''   
             },
             loadingShow: false,
-            ids: []
+            ids: [],
+            val: 0
             // addMenu: {
             //     name: '',
             //     src: '',
@@ -66,13 +67,12 @@ export default {
                 var lis = ul.find('li').length;
                 ul.find('h2').eq(lis-1).append($(`<span style="opacity: 0">${car_idx}</span>`));
                 // x1
-                ul.find('.dex').eq(lis-1).append($(`<span class="num${car_idx}"> X <b style="font-weight: 200">1</b></span><p style="display: none">666</p>`))
+                ul.find('.dex').eq(lis-1).append($(`<span class="num${car_idx}"> X <b style="font-weight: 200">1</b></span><p style="display: none" class="addnum${car_idx}"></p>`))
                 
                 // 删除不需要元素
                 $('.foodlist_ul .glyphicon').remove();
                 $('.foodlist_ul #food_num').remove();
                 // 相同物品加1并删除最后生成的li
-                console.log(panduan)
                 if(panduan > -1){
                     // 已存在删除最后生成元素
                     $('.foodlist_ul li').last().remove();
@@ -106,10 +106,12 @@ export default {
 
             }
 
-            // 点击加减直接重新价格计算
+            // 点击加减直接重新价格计算addnum
             var foot_money = 0;
             for(var i=0; i<$('.foodlist_ul li').length ; i++){
-                foot_money += Number($('.foodlist_ul li').eq(i).find('.dex span').html());
+                var foodlist_money = $('.foodlist_ul li').eq(i);
+                foodlist_money.find('.dex p').html(foodlist_money.find('.dex span').eq(0).html()*foodlist_money.find('.dex span').eq(1).find('b').html())
+                foot_money += Number(foodlist_money.find('.dex p').html());
             }
             $('#menu-footer .money p').html('￥'+foot_money)
         },
@@ -118,6 +120,7 @@ export default {
             $('.AL').fadeIn()
             // 获取弹窗信息
             var arr = this.datagrid[$(e.target).closest('.gai').index()];
+            this.val = $(e.target).closest('.gai').index();
             this.ALalert.src = arr.src;
             this.ALalert.h3 = arr.name;
             this.ALalert.p = arr.detailedness;
@@ -125,7 +128,38 @@ export default {
         // 加入菜单弹窗关闭
         addMenu: function(){
             $('.AL').fadeOut();
-
+            // 数字加一
+            var numB = $('.cart .cart_span').html();
+            $('.cart .cart_span').html(Number(numB)+1);
+            var car_idx = this.val;
+            var panduan = this.ids.indexOf(car_idx);
+            if(panduan > -1){
+                $(`.foodlist_ul .num${car_idx} b`).html(Number($(`.foodlist_ul .num${car_idx} b`).html())+1)
+            }else{
+                //点击加号按钮，复制当前信息到购物车
+                var li = $('.gai').eq(car_idx).find('li');
+                var copy_li=li.clone();
+                var ul = $('.foodlist_ul');
+                ul.append(copy_li);
+                // 购物车已有li数量 元素生成
+                this.ids.push(car_idx)
+                var lis = ul.find('li').length;
+                ul.find('h2').eq(lis-1).append($(`<span style="opacity: 0">${car_idx}</span>`));
+                // x1
+                ul.find('.dex').eq(lis-1).append($(`<span class="num${car_idx}"> X <b style="font-weight: 200">1</b></span><p style="display: none" class="addnum${car_idx}"></p>`))
+                
+                // 删除不需要元素
+                $('.foodlist_ul .glyphicon').remove();
+                $('.foodlist_ul #food_num').remove();
+            }
+            // 点击加入菜单重新价格计算addnum
+            var foot_money = 0;
+            for(var i=0; i<$('.foodlist_ul li').length ; i++){
+                var foodlist_money = $('.foodlist_ul li').eq(i);
+                foodlist_money.find('.dex p').html(foodlist_money.find('.dex span').eq(0).html()*foodlist_money.find('.dex span').eq(1).find('b').html())
+                foot_money += Number(foodlist_money.find('.dex p').html());
+            }
+            $('#menu-footer .money p').html('￥'+foot_money)
         },
         // 点击遮罩退出
         assmoMenu: function(){
