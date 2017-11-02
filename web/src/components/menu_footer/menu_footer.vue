@@ -90,12 +90,18 @@
                 var h2id = [];
 
                 if($('.verify span').html() == '0'){
+                    var order_obj = {'idx': idx, 'name': name , 'number': number}
                     $('.verify span').html('1')
                 }else{
+                    $('.verify span').html()
+                    var order_obj = {'idx': idx, 'name': name , 'number': number}
+                    // 删除原有数据
                     http.post({
                         url: "del", vm: this, params: {'idx': idx}}).then(res => {
                         console.log(res)
                     })
+
+
                 }
                 $('.foodlist_ul li').map(function(idx,item){
 
@@ -113,7 +119,7 @@
                     console.log(res.data)
                 })
                     // socketio
-				var order_obj = {'idx': idx, 'name': name , 'number': number}
+				// var order_obj = {'idx': idx, 'name': name , 'number': number}
 				 console.log(order_obj);
 
                
