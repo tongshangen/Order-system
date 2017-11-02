@@ -2,7 +2,7 @@
     <div class="hear_cont">
         <div id="menu_header">
             <router-link to="/"><i class="glyphicon glyphicon-chevron-left"></i></router-link>
-            <h1>1986西餐厅{{$route.params.zid}}</h1>
+            <h1>洋气的餐厅{{$route.params.zid}}</h1>
             <b class="glyphicon glyphicon-menu-hamburger"></b>
             <input type="text" placeholder="搜索菜品" @blur="search" class="search_msg"/>
         </div>
