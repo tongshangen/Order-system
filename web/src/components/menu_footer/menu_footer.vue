@@ -110,7 +110,7 @@
                     console.log(res.data)
                 })
                     // socketio
-				var order_obj = {'idx': idx, 'name': name, 'price': price , 'number': number, 'allprice': allprice, 'url': url }
+				var order_obj = {'idx': idx, 'name': name , 'number': number}
 				 console.log(order_obj);
 
                
