@@ -13,7 +13,6 @@ module.exports = {
         
 //      // post请求--查找用户
         app.post("/login", function(request, response){
-        	console.log(request.body);
         	var username = `'${request.body.username}'`;
         	var password = `'${request.body.password}'`;
         	var condition = `select * from user where username=${username} and password=${password}`;

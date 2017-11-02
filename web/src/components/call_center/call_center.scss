@@ -21,8 +21,8 @@
 		float: left;
 		font-size: 20px;
 		
-		&:first-of-type{
-			border-right: 2px solid #ccc;
+		&:last-of-type{
+			border-left: 2px solid #ccc;
 		}
 		&:last-of-type{
 			li{

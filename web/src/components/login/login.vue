@@ -57,7 +57,6 @@
 		        }
 //				console.log(this.username,this.password)
 				http.post({url:'login', params:{username: this.username, password: this.password},vm:this}).then(res => {
-					
 					console.log(res.data)
 					if(res.data.length==0){
 						alert('输入信息有误,请重新输入');

@@ -91,15 +91,24 @@
 <script type="text/javascript">
 	import './cook.scss'
 	import router from '../../router/'
+	var socket = io.connect('ws://localhost:777');
+	var arr;
 	//$children
 	export default {
-
-		
 		methods: {
 			
 			make: function(event){
 				if($(event.target).html() == "上菜"){
+					console.log($(event.target).parent().parent().children());
+					var tr = $(event.target).parent().parent().children();
+					var taihao = tr[1].innerHTML;
+					var caiming = tr[2].innerHTML;
+					arr = [];
+					arr.push(taihao);
+					arr.push(caiming);					
+					socket.emit('serving', arr);
 					$(event.target).parent().parent().remove();
+					return;
 				}
 				$(event.target).html('上菜');
 				$(event.target).removeClass('btn-info');
