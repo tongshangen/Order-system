@@ -92,7 +92,10 @@
                 if($('.verify span').html() == '0'){
                     $('.verify span').html('1')
                 }else{
-
+                    http.post({
+                        url: "del", vm: this, params: {'idx': idx}}).then(res => {
+                        console.log(res)
+                    })
                 }
                 $('.foodlist_ul li').map(function(idx,item){
 

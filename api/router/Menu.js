@@ -29,7 +29,8 @@ module.exports = {
 
         // 删
         app.post("/del", function(request, response){
-            db.delete("delete from menuadd where name='csx'" , function(result){
+
+            db.delete(`delete from menuadd where idx='${request.body.idx}'`, function(result){
                 console.log(result)
             })
         })
