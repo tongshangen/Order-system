@@ -183,7 +183,6 @@ export default {
             url: "select"
         ,vm:this}).then(res => {
             self.datagrid = res.data;
-            console.log(res.data)
         })
     },
     components: {

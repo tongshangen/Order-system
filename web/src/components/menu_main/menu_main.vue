@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="centent">
-                    <h2>{{value.name}}</h2>
+                    <h2 class="food_name">{{value.name}}</h2>
                     <p class="des">{{value.datails}}</p>
                     <div class="boxx">
                     <p class="dex">￥<span>{{value.price}}</span></p>
