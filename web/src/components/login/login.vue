@@ -55,35 +55,7 @@
 		            $('#password').focus();
 		            return false;
 		        }
-//				console.log(this.username,this.password)
 				http.post({url:'login', params:{username: this.username, password: this.password},vm:this}).then(res => {
-<<<<<<< HEAD
-					router.push({name: 'home'});
-
-				}),
-				function(res){
-		            if(res == false){
-		                alert('输入信息有误,请重新输入');
-		                return false;
-		            } else if(res == true){
-		                alert('登录成功');
-		                console.log(res)
-		            }
-		        }
-
-						
-//				function(response){
-//		            if(response == false){
-//		                alert('输入信息有误,请重新输入');
-//		                return false;
-//		            } else if(response == true){
-//		                alert('登录成功');
-//		                window.location.href='';
-//		                console.log(response)
-//		            }
-//		        }
-
-=======
 					console.log(res.data)
 					if(res.data.length==0){
 						alert('输入信息有误,请重新输入');
@@ -94,8 +66,8 @@
 						console.log(router);
 						router.push({name: `${router_name}`});
 					}
-				})			
->>>>>>> 2e18f247568e491326151383bd27413589a3cd47
+				})
+							
 			}
 		},
 		components: {
