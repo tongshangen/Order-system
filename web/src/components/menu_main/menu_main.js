@@ -179,7 +179,6 @@ export default {
         $('#menu_left li').eq(0).find('i').css('color','#fff')
         $('#menu_left li').eq(0).find('a').css('color','#fff')
 
-
         var self = this;
         http.post({
             url: "select"
