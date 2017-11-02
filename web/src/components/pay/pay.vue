@@ -9,12 +9,12 @@
 		<div class="pay_center">
 			<div class="pay_main">
 				<button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-lg" @click="wechat">微信支付</button>
-				<button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-lg" @click="alipay">支付宝支付</button>
-				<button type="button" class="btn btn-info">银联支付</button>
-				<button type="button" class="btn btn-info">现金支付</button>
+				<button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-lg" @click="wechat">支付宝支付</button>
+				<button type="button" class="btn btn-info" data-toggle="_modal" data-target=".bs-example-modal-lg" @click="payfor">银联支付</button>
+				<button type="button" class="btn btn-info" data-toggle="_modal" data-target=".bs-example-modal-lg" @click="payfor">现金支付</button>
 			</div>
 
-			<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+			<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="new">
 			  <div class="modal-dialog modal-lg" role="document">
 			    <div class="modal-content">
 			    	<h2>订单详情</h2>
@@ -47,6 +47,9 @@
 			  </div>
 			</div>
 			
+			<div id="popup">
+				<p>请稍候，服务员马上就到</p>
+			</div>
 
 		</div>
 
@@ -89,10 +92,17 @@
 			wechat: function(){
 				$('#myModal').modal();
 			},
-			alipay: function(){
-				$('#myModal').modal();
+			// alipay: function(){
+			// 	$('#myModal').modal();
 				
-			}
+			// },
+			payfor: function(){
+				// console.log(666)
+				$('#popup').show();
+				setTimeout(function(){
+					$('#popup').hide();
+				},2000);
+			},
 		},
 		mounted: function(){
 			console.log(this)
