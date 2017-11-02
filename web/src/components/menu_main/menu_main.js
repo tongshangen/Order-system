@@ -175,11 +175,6 @@ export default {
     mounted: function(){
         $('#menu_left li').eq(0).find('i').css('color','#fff')
         $('#menu_left li').eq(0).find('a').css('color','#fff')
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 0d2d623ba7e5ad90bafe508d5eb5c92d79c7bf8c
         var self = this;
         http.post({
             url: "select"
