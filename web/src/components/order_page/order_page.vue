@@ -6,25 +6,23 @@
 
 		</div>
 		<div class="order_center">
-			<div class="order_mid_top"><span>订单:<div class="dingdan">{{dingdan}}</div></span><span>数量:{{obj.id.length}}</span><span>总计：{{obj.allprice}}元</span></div><br>
-			<ul class="order_all" v-for="(value, index) in datagrid" v-if="array.indexOf(index) > -1">
-
-				<li>
+			<div class="order_mid_top"><span>订单:<div class="dingdan">{{dingdan}}</div></span><span>数量:{{}}</span><span>总计：{{}}元</span></div><br>
+			<ul class="order_all">
+				<li v-for="idxs in length">
 					<table>
 						<tr>
-							<td>{{value.id}}</td>
-							<td>{{value.name}}</td>
-							<td>{{value.price}}元</td>
-							<td>{{value.intro}}</td>
+							<!-- <td>{{value.id}}</td> -->
+							<td>{{name[idxs-1]}}</td>
+							<td>{{price[idxs-1]}}元</td>
+							<td>{{number[idxs-1]}}份</td>
 						</tr>
 						<tr>
-							<td colspan="2"><img :src="value.src"  alt=""></td>
-							<td><button type="button" class="btn btn-default btn-lg active" @click="urge">催菜</button></td>
+							<td colspan="2"><img :src="url[idxs-1]"  alt=""></td>
+							<td></td>
 							<td><button type="button" class="btn btn-default btn-lg active" @click="quit">退菜</button></td>
 						</tr>
 					</table>
 				</li>
-				
 			</ul>
 		</div>
 		<div class="order_footer"><button type="button" class="btn btn-default btn-lg active" data-toggle="modal" data-target=".bs-example-modal-lg">整单催菜</button><router-link to="/menu"><button type="button" class="btn btn-default btn-lg active" >继续点菜</button></router-link><router-link to="/pay" ><button type="button" class="btn btn-default btn-lg active last" >结算</button></router-link></div>
@@ -48,12 +46,10 @@
 	})
 	
 	var dingdan = document.querySelectorAll('.dingdan');	
-	// var num = parseInt(Math.random()*100000);
-	// console.log(num);
-	// 
 	var now = new Date().getTime();
 	// console.log(dingdan);
 	dingdan.innerHTML = now;
+
 
 
 	export default{
@@ -61,16 +57,21 @@
 		data: function(){
 			return {
 				datagrid: [],
-				array: [0,5,9],
+				// array: [0,5,9],
 				dingdan: now,
-				obj:{
-					id: [1,2,3],
-					idx: 5,
-					name: '',
-					price: 99,
-					number: 6,
-					allprice: 288,
-				},
+				length: 0,
+				name: [],
+				price: [],
+				number: [],
+				url:[],
+				// obj:{
+				// 	id: [1,2,3],
+				// 	idx: 5,
+				// 	name: '',
+				// 	price: 99,
+				// 	number: 6,
+				// 	allprice: 288,
+				// },
 			}
 		},
 
@@ -95,6 +96,12 @@
 			}).then(res => {
 			    self.datagrid = res.data;
 			    console.log(res.data)
+			   	self.price = res.data[0].price.split(",");
+			    self.name = res.data[0].name.split(",");
+			   	self.number = res.data[0].number.split(",");
+			   	self.url = res.data[0].url.split(",");
+			    self.length = res.data[0].name.split(",").length;
+			    console.log(self.length)
 
 			})
 
