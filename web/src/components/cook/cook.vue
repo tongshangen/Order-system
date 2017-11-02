@@ -12,16 +12,17 @@
 			<table class="table table-striped table-bordered">
 				<thead>
 					<tr>
-						<th>订单序号</th>
+						
 						<th>台号</th>
 						<th>菜名</th>
+						<th>数量</th>
 						<th>备注</th>
 						<th>制作状态</th>
 						<th>上菜</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
+				<tbody class="cook_table">
+					<!--<tr>
 						<td>10301040</td>
 						<td>001</td>
 						<td>黄焖鸡</td>
@@ -76,7 +77,7 @@
 						<td>少辣</td>
 						<td>未制作</td>
 						<td><button class="btn btn-info" @click="make">制作</button></td>
-					</tr>
+					</tr>-->
 					
 				</tbody>
 			</table>
@@ -93,28 +94,51 @@
 	import router from '../../router/'
 	var socket = io.connect('ws://localhost:777');
 	var arr;
-	//$children
+	socket.on('menu_msg',function(data){
+		console.log(data);
+		var num = data.name.length
+		console.log(num);
+		var cook_table = $('.cook_table');
+		for(var i=0;i<num;i++){
+			var html = `
+				<tr>
+					
+					<td>${data.idx}</td>
+					<td>${data.name[i]}</td>
+					<td>${data.number[i]}</td>
+					<td>...</td>
+					<td>未制作</td>
+					<td><button class="btn btn-info btn_change">制作</button></td>
+				</tr>
+			`
+			cook_table.append(html);
+			
+		}
+		
+		$('.btn_change').click(function(){
+			console.log(this);
+			if($(this).html() == "上菜"){
+				var tr = $(this).parent().parent().children();
+				var taihao = tr[1].innerHTML;
+				var caiming = tr[2].innerHTML;
+				arr = [];
+				arr.push(taihao);
+				arr.push(caiming);					
+				socket.emit('serving', arr);
+				$(this).parent().parent().remove();
+				return;
+			}
+			$(this).html('上菜');
+			$(this).removeClass('btn-info');
+			$(this).addClass('btn-success');
+			$(this).parent().prev().html('正在制作');
+		})
+	});
+	
 	export default {
 		methods: {
 			
-			make: function(event){
-				if($(event.target).html() == "上菜"){
-					console.log($(event.target).parent().parent().children());
-					var tr = $(event.target).parent().parent().children();
-					var taihao = tr[1].innerHTML;
-					var caiming = tr[2].innerHTML;
-					arr = [];
-					arr.push(taihao);
-					arr.push(caiming);					
-					socket.emit('serving', arr);
-					$(event.target).parent().parent().remove();
-					return;
-				}
-				$(event.target).html('上菜');
-				$(event.target).removeClass('btn-info');
-				$(event.target).addClass('btn-success');
-				$(event.target).parent().prev().html('正在制作');
-			},
+			
 			out:function(){
 				router.push({name: 'login'});
 			}

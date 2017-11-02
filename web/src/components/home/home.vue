@@ -8,7 +8,7 @@
 				<li><i class="iconfont icon-diancanguanli"></i><router-link to="/menu">点餐</router-link></li>
 				<li><i class="iconfont icon-hujiao"></i><a @click="call" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">呼叫服务</a></li>
 				<li><i class="iconfont icon-diancan"></i><router-link to="/order_page">已点菜</router-link></li>
-				<li><i class="iconfont icon-gouwuche"></i><router-link to="/floor1">购物车</router-link></li>
+				<li><i class="iconfont icon-gouwuche"></i><router-link to="/pay">结算</router-link></li>
 			</ul>
 			<div class="home_footer"></div>
 		</div>

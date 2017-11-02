@@ -47,6 +47,22 @@ html,body{
 	        	border-radius:0.20rem;
 	        }
         }
+        .modal{
+        	h2{text-align: center;font-weight: bold;}
+			.indent{font-size: 34px;margin-top: 3%;}
+			ul{margin-top: 5%;
+				li{
+					font-size: 30px;
+					table{
+						tr{
+							th,td{width: 200px;height: 30%;}
+						}
+					}
+				}
+			}
+			.total{text-align: right;font-size: 40px;font-weight: bold;}
+			
+        }
     }
     .pay_footer{
     	width: 100%;

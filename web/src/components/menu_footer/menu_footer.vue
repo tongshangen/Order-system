@@ -103,12 +103,19 @@
                     url.push($(item).find('.img img').attr('src'));
                     h2id.push($(item).find('h2 span').html())
                 })
-                
+
                 http.post({
                     url: "menuadd", vm: this, params: {'idx': idx, 'name': name, 'price': price , 'number': number, 'allprice': allprice, 'url': url , 'h2id': h2id}}).then(res => {
                     self.datagrid = res.data;
                     console.log(res.data)
                 })
+                    // socketio
+				var order_obj = {'idx': idx, 'name': name, 'price': price , 'number': number, 'allprice': allprice, 'url': url }
+				 console.log(order_obj);
+
+               
+                socket.emit('menu_cd',order_obj);
+                
                 
             }
         },
@@ -122,6 +129,7 @@
                 console.log(self.datagoods)
                 self.idx = res.data[0].name.split(',').length;
             })
+
             
         },
         updated: function(){
