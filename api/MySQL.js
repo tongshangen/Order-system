@@ -9,7 +9,7 @@ var mysql = require('mysql');
 
 // 创建连接池
 var pool = mysql.createPool({
-  host     : '10.3.131.10',
+  host     : '10.3.131.8',
   user     : 'root',
   password : '',
   database: 'order'

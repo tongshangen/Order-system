@@ -6,7 +6,7 @@
 
 		</div>
 		<div class="order_center">
-			<div class="order_mid_top"><span>订单:</span><span>数量:</span><span>总计：元</span></div><br>
+			<div class="order_mid_top"><span>订单:<div class="dingdan">{{dingdan}}</div></span><span>数量:{{obj.id.length}}</span><span>总计：{{obj.allprice}}元</span></div><br>
 			<ul class="order_all" v-for="(value, index) in datagrid" v-if="array.indexOf(index) > -1">
 
 				<li>
@@ -46,9 +46,14 @@
 	socket.on('menu_over',function(data){
 	    console.log(data)
 	})
-
-	var num = parseInt(Math.random()*100000);
-	console.log(num);
+	
+	var dingdan = document.querySelectorAll('.dingdan');	
+	// var num = parseInt(Math.random()*100000);
+	// console.log(num);
+	// 
+	var now = new Date().getTime();
+	// console.log(dingdan);
+	dingdan.innerHTML = now;
 
 
 	export default{
@@ -56,7 +61,16 @@
 		data: function(){
 			return {
 				datagrid: [],
-				array: [0,5,9]
+				array: [0,5,9],
+				dingdan: now,
+				obj:{
+					id: [1,2,3],
+					idx: 5,
+					name: '',
+					price: 99,
+					number: 6,
+					allprice: 288,
+				},
 			}
 		},
 
@@ -77,7 +91,7 @@
 			console.log(this)
 			var self = this;
 			http.post({
-			    url: "select"
+			    url: "menuSelect"
 			}).then(res => {
 			    self.datagrid = res.data;
 			    console.log(res.data)
