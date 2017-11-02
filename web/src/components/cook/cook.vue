@@ -96,7 +96,7 @@
 	var arr;
 	socket.on('menu_msg',function(data){
 		console.log(data);
-		var num = data.name.length
+		var num = data.name.length;
 		console.log(num);
 		var cook_table = $('.cook_table');
 		for(var i=0;i<num;i++){
