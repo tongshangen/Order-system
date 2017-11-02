@@ -34,13 +34,15 @@ module.exports = {
             })
         })
         // post请求--查
-         app.post("/select", function(request, response){
-             // select 查询， from 找哪个库, test 库名 ， limit 查找条数 10条
-             db.select('select * from menu',function(returnData){
-                 // console.log(returnData)
-                 response.send(returnData);
-             })
-         });
+
+        app.post("/select", function(request, response){
+            // select 查询， from 找哪个库, test 库名 ， limit 查找条数 10条
+            db.select('select * from menu',function(returnData){
+                // console.log(returnData)
+                response.send(returnData);
+            })
+        });
+
         // 改
         app.post("/update", function(request, response){
             db.update("update test set cost='3' where name='csx'" , function(result){
@@ -48,7 +50,6 @@ module.exports = {
             })
         });
         
-       
     }
 
 }

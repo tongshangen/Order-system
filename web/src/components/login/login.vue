@@ -55,20 +55,19 @@
 		            $('#password').focus();
 		            return false;
 		        }
-//				console.log(this.username,this.password)
 				http.post({url:'login', params:{username: this.username, password: this.password},vm:this}).then(res => {
-					router.push({name: 'home'});
-				})			
-//				function(response){
-//		            if(response == false){
-//		                alert('输入信息有误,请重新输入');
-//		                return false;
-//		            } else if(response == true){
-//		                alert('登录成功');
-//		                window.location.href='';
-//		                console.log(response)
-//		            }
-//		        }
+					console.log(res.data)
+					if(res.data.length==0){
+						alert('输入信息有误,请重新输入');
+					}
+					else{
+						alert('登录成功');
+						var router_name = res.data[0].router;
+						console.log(router);
+						router.push({name: `${router_name}`});
+					}
+				})
+							
 			}
 		},
 		components: {
