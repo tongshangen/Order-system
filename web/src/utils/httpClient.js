@@ -30,7 +30,6 @@ export default {
 		if(opts.vm){
 			opts.vm[opts.loading || 'loadingShow'] = true;
 		}
-			console.log(opts.params)
 		axios.post(filterUrl(opts.url), opts.params).then(function(response){
 			if(opts.vm){
 				opts.vm[opts.loading || 'loadingShow'] = false;

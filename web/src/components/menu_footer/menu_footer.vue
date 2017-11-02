@@ -50,9 +50,9 @@
 </template>
 
 <script type="text/javascript">
-    import './menu_footer.scss'
-    import http from '../../utils/httpClient.js'
-
+    import './menu_footer.scss';
+    import http from '../../utils/httpClient.js';
+    import router from '../../router/';
     var socket = io.connect('ws://localhost:777');
     
     export default{
@@ -88,19 +88,36 @@
                 var allprice = [];
                 var url = [];
                 var h2id = [];
-
+                var order_obj ={};
                 if($('.verify span').html() == '0'){
-                    var order_obj = {'idx': idx, 'name': name , 'number': number}
+                    order_obj = {'idx': idx, 'name': name , 'number': number}
                     $('.verify span').html('1')
                 }else{
-                    $('.verify span').html()
-                    var order_obj = {'idx': idx, 'name': name , 'number': number}
-                    // 删除原有数据
-                    http.post({
-                        url: "del", vm: this, params: {'idx': idx}}).then(res => {
-                        console.log(res)
-                    })
+                    if($('.Cdata').html() != ''){
+                        var Cdataarr = $('.Cdata').html().slice(0,-1).split(',')
+                        var dsa = [];
+                        var nb = [];
+                        var nm = [];
+                        for(var i=0; i<Cdataarr.length; i++){
+                            if(dsa.indexOf(Cdataarr[i].split('-')[0]) <0){
+                                dsa.push(Cdataarr[i].split('-')[0]);
+                                nb.push('1')
+                                nm.push(Cdataarr[i].split('-')[1])
+                            }else{
+                                var start = dsa.indexOf(Cdataarr[i].split('-')[0])
+                                nb.splice(start,1,(Number(nb[start])+1))
+                            }
+                        }
 
+                        order_obj = {'idx': idx, 'name': nm , 'number': nb}
+                        // 删除原有数据
+                        http.post({
+                            url: "del", vm: this, params: {'idx': idx}}).then(res => {
+                            console.log(res)
+                        })
+                        $('.Cdata').html('')
+                    }
+                    
 
                 }
                 $('.foodlist_ul li').map(function(idx,item){
@@ -118,13 +135,9 @@
                     self.datagrid = res.data;
                     console.log(res.data)
                 })
-                    // socketio
-				// var order_obj = {'idx': idx, 'name': name , 'number': number}
-				 console.log(order_obj);
-
                
                 socket.emit('menu_cd',order_obj);
-                
+                router.push({name:'home'})
                 
             }
         },
@@ -135,8 +148,10 @@
                 url: "menuSelect"
             ,vm:this}).then(res => {
                 self.datagoods = res.data[0];
-                console.log(self.datagoods)
-                self.idx = res.data[0].name.split(',').length;
+                if(res.data[0] != undefined){
+                    self.idx = res.data[0].name.split(',').length;
+                    $('.verify span').html('1');
+                }
             })
 
             

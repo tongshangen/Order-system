@@ -36,7 +36,7 @@
 		console.log(data);
 		var Customer_call = $('.Customer_call');
 		console.log(Customer_call);
-		Customer_call.append(`<li><span>1号桌呼叫</span><span>客户要求：${data}</span><button type="button" class="btn btn-warning btn_del">点击处理</button></li>`)
+		Customer_call.append(`<li><span>88号桌呼叫</span><span>客户要求：${data}</span><button type="button" class="btn btn-warning btn_del">点击处理</button></li>`)
 		$('.btn_del').click(function(){
 			$(this).parent().remove();
 		})

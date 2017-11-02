@@ -64,8 +64,8 @@ export default {
             var car_idx = $(e.target).closest('.gai').index();
             this.val = $(e.target).closest('.gai').index();
             // 是否已有数据存在-存在
-            if($('.verify span').html() == '1' && $(e.target)[0] == $(e.target).parent().find(i).eq(0)[0] ){
-                this.CdataName.push($(e.target).closest('.centent').find('h2').text())
+            if($('.verify span').html() == '1' && $(e.target)[0] == $(e.target).parent().find('i').eq(0)[0] ){
+                this.CdataName.push(this.val+'-'+$(e.target).closest('.centent').find('h2').text())
                 $('.Cdata').html(this.CdataName+',')
                 console.log($('.Cdata').html())
             }
@@ -158,25 +158,28 @@ export default {
         },
         // 点击nav变色
         menu_leftNav: function(ev){
-            console.log($(ev.target).closest('li').index())
            $('#menu_left li i').css('color','#EFBC0F')
            $('#menu_left li a').css('color','#EFBC0F')
            $(ev.target).closest('li').find('i').css('color','#fff')
            $(ev.target).closest('li').find('a').css('color','#fff')
         },
         tiaozhuan:function(e){
-        	var index = $(e.target).parent().parent().index();
-        	var type = $('.type');    	
-    		var menu_datagrid = $('#menu_datagrid');
-			var menu_top = menu_datagrid.offset().top;
-        	var type_top = $(type[index]).offset().top - menu_top;
-        	console.log(type_top);
-        	menu_datagrid.animate({scrollTop:type_top},500);
+            var index = $(e.target).parent().parent().index();
+            var type = $('.type');      
+            var menu_datagrid = $('#menu_datagrid');
+            var menu_top = menu_datagrid.offset().top;
+            var type_top = $(type[index]).offset().top - menu_top;
+            menu_datagrid.animate({scrollTop:type_top},500);
         }
     },
     mounted: function(){
         $('#menu_left li').eq(0).find('i').css('color','#fff')
         $('#menu_left li').eq(0).find('a').css('color','#fff')
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 0d2d623ba7e5ad90bafe508d5eb5c92d79c7bf8c
         var self = this;
         http.post({
             url: "select"
