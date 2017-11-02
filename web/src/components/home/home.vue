@@ -1,7 +1,7 @@
 <template>
 	<div class="home">
 		<div class="toolbar">
-			<div class="home_header">xx餐厅 {{$route.params.zid}}号桌</div>
+			<div class="home_header">洋气的餐厅 88号桌</div>
 			<ul class="home_body">
 				<li><i class="iconfont icon-menguo"></i><router-link to="/menu">推荐菜</router-link></li>
 				<li><i class="iconfont icon-huiyuan"></i><router-link to="/floor1">会员</router-link></li>
