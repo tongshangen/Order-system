@@ -47,8 +47,7 @@
 	
 	var dingdan = document.querySelectorAll('.dingdan');	
 	var now = new Date().getTime();
-	// console.log(dingdan);
-	dingdan.innerHTML = now;
+	
 
 
 
@@ -65,14 +64,6 @@
 				url: [],
 				allprice: [],
 				total:0,
-				// obj:{
-				// 	id: [1,2,3],
-				// 	idx: 5,
-				// 	name: '',
-				// 	price: 99,
-				// 	number: 6,
-				// 	allprice: 288,
-				// },
 			}
 		},
 
@@ -108,13 +99,12 @@
 			     // var num = Number(self.allprice[0])
 			     // console.log(num)
 			     
-			     var arr = self.allprice;
-		     	console.log("1111s",arr[0])
-			     for (var i = 0; i < arr.length; i++) {
-			     	self.total += arr[i]*1;	
-			     }
-			})
+			    var arr = self.allprice;
 
+			    for (var i = 0; i < arr.length; i++) {
+			    	self.total += arr[i]*1;	
+			    }
+			})
 		}
 	}
 </script>
