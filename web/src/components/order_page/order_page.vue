@@ -6,7 +6,7 @@
 
 		</div>
 		<div class="order_center">
-			<div class="order_mid_top"><span>订单:<div class="dingdan">{{dingdan}}</div></span><span>数量:{{}}</span><span>总计：{{}}元</span></div><br>
+			<div class="order_mid_top"><span>订单:{{dingdan}}</span><span>数量:{{length}}</span><span>总计：{{total}}元</span></div><br>
 			<ul class="order_all">
 				<li v-for="idxs in length">
 					<table>
@@ -57,13 +57,14 @@
 		data: function(){
 			return {
 				datagrid: [],
-				// array: [0,5,9],
 				dingdan: now,
 				length: 0,
 				name: [],
 				price: [],
 				number: [],
-				url:[],
+				url: [],
+				allprice: [],
+				total:0,
 				// obj:{
 				// 	id: [1,2,3],
 				// 	idx: 5,
@@ -100,9 +101,18 @@
 			    self.name = res.data[0].name.split(",");
 			   	self.number = res.data[0].number.split(",");
 			   	self.url = res.data[0].url.split(",");
+			   	self.allprice = res.data[0].allprice.split(",");
 			    self.length = res.data[0].name.split(",").length;
-			    console.log(self.length)
-
+			    // console.log(self.length)
+			    // console.log(self.allprice[0])
+			     // var num = Number(self.allprice[0])
+			     // console.log(num)
+			     
+			     var arr = self.allprice;
+		     	console.log("1111s",arr[0])
+			     for (var i = 0; i < arr.length; i++) {
+			     	self.total += arr[i]*1;	
+			     }
 			})
 
 		}
