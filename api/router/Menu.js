@@ -13,7 +13,7 @@ module.exports = {
         // 客户确认菜单增add{id: 1, idx: value值, name: 菜名, price: 99 , number: 菜品数量, allprice: 菜品总价}
         app.post("/menuadd", function(request, response){
           
-            db.add(`insert into menuadd (idx, name, price, number, allprice, url) values('${request.body.idx}', '${request.body.name}', '${request.body.price}' ,'${request.body.number}' , '${request.body.allprice}', '${request.body.url}')` , function(result){
+            db.add(`insert into menuadd (idx, name, price, number, allprice, url,h2id) values('${request.body.idx}', '${request.body.name}', '${request.body.price}' ,'${request.body.number}' , '${request.body.allprice}', '${request.body.url}', '${request.body.h2id}')` , function(result){
                 console.log(result)
             })
         })

@@ -13,24 +13,31 @@
 
         <!--列表-->
         <div class="foodlist">
-            <p class="verify">已选菜单</p>
+            <p class="Cdata"></p>
+            <p class="verify">已选菜单<span>0</span></p>
             <ul class="foodlist_ul">
             <!-- ............ -->
-                <li v-if="datagoods.length>0">
+                <li v-if="datagoods.name.length>0" v-for="index in idx">
                     <div class="img" >
-                    <img :src="value.src"  alt="" />
+                    <img :src="datagoods.url.split(',')[index-1]"  alt="" />
                     </div>
 
                     <div class="centent">
-                        <h2>{{value.name}} <span style="opacity: 0"></span> </h2>
-                        <p class="des">{{value.datails}}</p>
-                        <div class="boxx">
-                        <p class="dex">￥<span>{{value.price}}</span>
-                            <span> X <b style="font-weight: 200">1</b></span>
-                            <p style="display: none">197</p>
+                        <h2>{{datagoods.name.split(',')[index-1]}} <span style="opacity: 0">{{datagoods.h2id.split(',')[index-1]}}</span> </h2>
+                        <p class="des">由米其林五星大厨出品
                         </p>
-                        <div class="butBox">
-                        </div>
+                        <div class="boxx">
+                        <p class="dex">
+                            ￥<span>
+                            {{datagoods.price.split(',')[index-1]}}
+                            </span>
+                            <span> X
+                            <b style="font-weight: 200">{{datagoods.number.split(',')[index-1]}}
+                            </b>
+                            </span>
+                            <p style="display: none" class="ALLmoney">{{datagoods.allprice.split(',')[index-1]}}
+                            </p>
+                        </p>
                         </div>
                     </div>
                 </li>
@@ -52,7 +59,8 @@
         data: function(){
             return {
                 datagoods: [],
-                idx: []
+                idx: [],
+
             }
         },
         methods:{
@@ -73,14 +81,19 @@
             },
             // 点击确认菜单传输数据保存到数据库
             rc_cart: function(){
-                var idx = '88桌';
+                var idx = '88';
                 var name = [];
                 var price = [];
                 var number = [];
                 var allprice = [];
                 var url = [];
+                var h2id = [];
 
-                console.log($('.foodlist_ul li'))
+                if($('.verify span').html() == '0'){
+                    $('.verify span').html('1')
+                }else{
+
+                }
                 $('.foodlist_ul li').map(function(idx,item){
 
                     name.push($(item).find('h2').text().match(/\D*/));
@@ -88,48 +101,41 @@
                     number.push($(item).find('.dex span b').text());
                     allprice.push($(item).find('.dex p').text());
                     url.push($(item).find('.img img').attr('src'));
-
+                    h2id.push($(item).find('h2 span').html())
                 })
                 
                 http.post({
-                    url: "menuadd", vm: this, params: {'idx': idx, 'name': name, 'price': price , 'number': number, 'allprice': allprice, 'url': url }}).then(res => {
+                    url: "menuadd", vm: this, params: {'idx': idx, 'name': name, 'price': price , 'number': number, 'allprice': allprice, 'url': url , 'h2id': h2id}}).then(res => {
                     self.datagrid = res.data;
                     console.log(res.data)
                 })
-                    // 
-                // var arrs = [];
-                // console.log(66)
-                // for(var i=0; i<$('.foodlist ul li').length; i++){
-                //     var idx = $('.foodlist ul li').eq(i).find('h2 span').html();
-                //     this.idx.push(idx);
-                // }
-                // socket.emit('menu_cd',this.idx);
-                
-                // 存入购物车
-                // console.log(this.$parent.$el)
-                // console.log(this.$parent.$children[2].idx)
                 
             }
         },
         mounted: function(){
-            // var self = this;
-            // http.post({
-            //     url: "select"
-            // ,vm:this}).then(res => {
-            //     self.datagrid = res.data;
-            //     console.log(res.data)
-            // })
-
-            // 点击加入菜单重新价格计算addnum
-                // var foot_money = 0;
-                // for(var i=0; i<$('.foodlist_ul li').length ; i++){
-                //     var foodlist_money = $('.foodlist_ul li').eq(i);
-                //     foodlist_money.find('.dex p').html(foodlist_money.find('.dex span').eq(0).html()*foodlist_money.find('.dex span').eq(1).find('b').html())
-                //     foot_money += Number(foodlist_money.find('.dex p').html());
-                // }
-                // $('#menu-footer .money p').html('￥'+foot_money)
-
+            var self = this;
+            console.log(this)
+            http.post({
+                url: "menuSelect"
+            ,vm:this}).then(res => {
+                self.datagoods = res.data[0];
+                console.log(self.datagoods)
+                self.idx = res.data[0].name.split(',').length;
+            })
             
+        },
+        updated: function(){
+            // 点击加减直接重新价格计算addnum
+            var foot_money = 0;
+            var Num = 0;
+            for(var i=0; i<$('.foodlist_ul li').length ; i++){
+                foot_money += Number($('.foodlist_ul li .dex').eq(i).next().html());
+            }
+            this.datagoods.number.split(',').map(item=>{
+                Num += Number(item)
+            })
+            $('#menu-footer .cart_span').html(Num)
+            $('#menu-footer .money p').html('￥'+foot_money)
         }
         
     }

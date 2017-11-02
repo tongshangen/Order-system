@@ -23,14 +23,36 @@ export default {
             },
             loadingShow: false,
             ids: [],
-            val: 0
-            // addMenu: {
-            //     name: '',
-            //     src: '',
-            //     count: '',
-            //     price: '',
-            //     Znumber: '08'
-            // }
+            val: 0,
+            CdataName: [],
+            jisuan: function(){
+                var foot_money = 0;
+                
+                for(var i=0; i<$('.foodlist_ul li').length ; i++){
+                    var foodlist_money = $('.foodlist_ul li').eq(i);
+                    foodlist_money.find('.dex p').html(foodlist_money.find('.dex span').eq(0).html()*foodlist_money.find('.dex span').eq(1).find('b').html())
+                    foot_money += Number(foodlist_money.find('.ALLmoney').html());
+                }
+                $('#menu-footer .money p').html('￥'+Number(foot_money))
+            },
+            htmlST: function(){
+                //点击加号按钮，复制当前信息到购物车
+                var car_idx = this.val;
+                var li = $('.gai').eq(car_idx).find('li');
+                var copy_li=li.clone();
+                var ul = $('.foodlist_ul');
+                ul.append(copy_li);
+                // 购物车已有li数量 元素生成
+                this.ids.push(car_idx)
+                var lis = ul.find('li').length;
+                ul.find('h2').eq(lis-1).append($(`<span style="opacity: 0">${car_idx}</span>`));
+                // x1
+                ul.find('.dex').eq(lis-1).append($(`<span class="num${car_idx}"> X <b style="font-weight: 200">1</b></span><p style="display: none" class="ALLmoney"></p>`))
+                
+                // 删除不需要元素
+                $('.foodlist_ul .glyphicon').remove();
+                $('.foodlist_ul #food_num').remove();
+            }
         }
     },
     methods: {
@@ -40,6 +62,13 @@ export default {
             e.stopPropagation();
             // id
             var car_idx = $(e.target).closest('.gai').index();
+            this.val = $(e.target).closest('.gai').index();
+            // 是否已有数据存在-存在
+            if($('.verify span').html() == '0'){
+                this.CdataName.push($(e.target).closest('.centent').find('h2').text())
+                $('.Cdata').html(this.CdataName+',')
+                console.log($('.Cdata').html())
+            }
             // 判断加减
             if($(e.target).index() > 0){
                 // 购物车相同物品减一
@@ -57,21 +86,7 @@ export default {
             }else{
                 
                 var panduan = this.ids.indexOf(car_idx);
-                //点击加号按钮，复制当前信息到购物车
-                var li = $(e.target).closest('li');
-                var copy_li=li.clone();
-                var ul = $('.foodlist_ul');
-                ul.append(copy_li);
-                // 购物车已有li数量 元素生成
-                this.ids.push(car_idx)
-                var lis = ul.find('li').length;
-                ul.find('h2').eq(lis-1).append($(`<span style="opacity: 0">${car_idx}</span>`));
-                // x1
-                ul.find('.dex').eq(lis-1).append($(`<span class="num${car_idx}"> X <b style="font-weight: 200">1</b></span><p style="display: none" class="addnum${car_idx}"></p>`))
-                
-                // 删除不需要元素
-                $('.foodlist_ul .glyphicon').remove();
-                $('.foodlist_ul #food_num').remove();
+                this.htmlST();
                 // 相同物品加1并删除最后生成的li
                 if(panduan > -1){
                     // 已存在删除最后生成元素
@@ -105,15 +120,8 @@ export default {
                 )
 
             }
-
-            // 点击加减直接重新价格计算addnum
-            var foot_money = 0;
-            for(var i=0; i<$('.foodlist_ul li').length ; i++){
-                var foodlist_money = $('.foodlist_ul li').eq(i);
-                foodlist_money.find('.dex p').html(foodlist_money.find('.dex span').eq(0).html()*foodlist_money.find('.dex span').eq(1).find('b').html())
-                foot_money += Number(foodlist_money.find('.dex p').html());
-            }
-            $('#menu-footer .money p').html('￥'+foot_money)
+            this.jisuan();
+            
         },
         // 弹窗出现
         li_alert: function(e){
@@ -133,33 +141,16 @@ export default {
             $('.cart .cart_span').html(Number(numB)+1);
             var car_idx = this.val;
             var panduan = this.ids.indexOf(car_idx);
+            // input加一
+            var iput = $('#menu_datagrid .gai').eq(this.val).find('input');
+            iput.val(Number(iput.val())+1);
             if(panduan > -1){
                 $(`.foodlist_ul .num${car_idx} b`).html(Number($(`.foodlist_ul .num${car_idx} b`).html())+1)
-            }else{
-                //点击加号按钮，复制当前信息到购物车
-                var li = $('.gai').eq(car_idx).find('li');
-                var copy_li=li.clone();
-                var ul = $('.foodlist_ul');
-                ul.append(copy_li);
-                // 购物车已有li数量 元素生成
-                this.ids.push(car_idx)
-                var lis = ul.find('li').length;
-                ul.find('h2').eq(lis-1).append($(`<span style="opacity: 0">${car_idx}</span>`));
-                // x1
-                ul.find('.dex').eq(lis-1).append($(`<span class="num${car_idx}"> X <b style="font-weight: 200">1</b></span><p style="display: none" class="addnum${car_idx}"></p>`))
                 
-                // 删除不需要元素
-                $('.foodlist_ul .glyphicon').remove();
-                $('.foodlist_ul #food_num').remove();
+            }else{
+                this.htmlST();
             }
-            // 点击加入菜单重新价格计算addnum
-            var foot_money = 0;
-            for(var i=0; i<$('.foodlist_ul li').length ; i++){
-                var foodlist_money = $('.foodlist_ul li').eq(i);
-                foodlist_money.find('.dex p').html(foodlist_money.find('.dex span').eq(0).html()*foodlist_money.find('.dex span').eq(1).find('b').html())
-                foot_money += Number(foodlist_money.find('.dex p').html());
-            }
-            $('#menu-footer .money p').html('￥'+foot_money)
+            this.jisuan();
         },
         // 点击遮罩退出
         assmoMenu: function(){
@@ -167,6 +158,7 @@ export default {
         },
         // 点击nav变色
         menu_leftNav: function(ev){
+            console.log($(ev.target).closest('li').index())
            $('#menu_left li i').css('color','#EFBC0F')
            $('#menu_left li a').css('color','#EFBC0F')
            $(ev.target).closest('li').find('i').css('color','#fff')

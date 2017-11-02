@@ -76,68 +76,20 @@
     </div>
     <!-- 弹窗 -->
     <div class="AL" >
-    <div class="shade" @click="assmoMenu"></div>
-    <div class="alert">
-        <img :src="ALalert.src" height="640" width="1024" alt="" />
-        <div class="cctext">
-            <h3>{{ALalert.h3}}</h3>
-            <p>{{ALalert.p}}</p>
-            <div class="cctext_bottom">
-            <input type="text" placeholder="用餐备注"/>
-            <span @click="addMenu">加入菜单</span>
+        <div class="shade" @click="assmoMenu"></div>
+            <div class="alert">
+                <img :src="ALalert.src" height="640" width="1024" alt="" />
+                <div class="cctext">
+                    <h3>{{ALalert.h3}}</h3>
+                    <p>{{ALalert.p}}</p>
+                    <div class="cctext_bottom">
+                    <input type="text" placeholder="用餐备注"/>
+                    <span @click="addMenu">加入菜单</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    </div>
-    
-    </div>
     
 </template>
-<!-- 
-<script type="text/javascript">
-
-    import './menu_main.scss'
-    import './menu_main.js'
-    import http from '../../utils/httpClient.js'
-
-    export default {
-        data: function(){
-            return {
-                datagrid: []
-            }
-        },
-        methods: {
-            on: function(e){
-                // 加入购物车效果
-                var h = parseInt($(e.target).closest('li').innerHeight());
-                var setW = parseInt($(e.target).innerWidth());
-                // w10%
-                var x = e.clientX-innerWidth/10-setW*2;
-                var y = innerHeight-e.clientY-h/2;
-                // 购物车速度
-                var speed = 1000;
-
-                $(e.target).after(
-                    $(e.target).clone().css({'left': setW, 'z-index': 9}).animate({top:-h/2, left:-setW*3}, speed/2, function(){
-                        $(this).animate({top: y, left: -x}, speed, function(){
-                            $(this).remove()
-                        })
-                    })
-                )
-                // 数字加一
-                var numB = $('.cart .cart_span').html();
-                $('.cart .cart_span').html(Number(numB)+1);
-            }
-        },
-        mounted: function(){
-            var self = this;
-            http.post({
-                url: "select"
-            }).then(res => {
-                self.datagrid = res.data;
-                console.log(res.data)
-            })
-        }
-    }
-</script> -->
 <script type="text/javascript" src="./menu_main.js"></script>
