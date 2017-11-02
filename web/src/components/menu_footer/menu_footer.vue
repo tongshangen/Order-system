@@ -148,8 +148,7 @@
                 url: "menuSelect"
             ,vm:this}).then(res => {
                 self.datagoods = res.data[0];
-                console.log(self.datagoods)
-                if(self.datagoods.name){
+                if(res.data[0] != undefined){
                     self.idx = res.data[0].name.split(',').length;
                     $('.verify span').html('1');
                 }

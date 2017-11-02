@@ -158,7 +158,6 @@ export default {
         },
         // 点击nav变色
         menu_leftNav: function(ev){
-            console.log($(ev.target).closest('li').index())
            $('#menu_left li i').css('color','#EFBC0F')
            $('#menu_left li a').css('color','#EFBC0F')
            $(ev.target).closest('li').find('i').css('color','#fff')
@@ -170,7 +169,6 @@ export default {
             var menu_datagrid = $('#menu_datagrid');
             var menu_top = menu_datagrid.offset().top;
             var type_top = $(type[index]).offset().top - menu_top;
-            console.log(type_top);
             menu_datagrid.animate({scrollTop:type_top},500);
         }
     },
