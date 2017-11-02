@@ -27,7 +27,6 @@
     					arr.push(item); 					
     				}
     			})
-    			
     			var top = $(arr[0]).offset().top-menu_top;
     			$('#menu_datagrid').animate({scrollTop:top},1000);
     		}

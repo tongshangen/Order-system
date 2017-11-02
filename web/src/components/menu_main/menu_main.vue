@@ -5,39 +5,39 @@
     <div id="menu_left" >
         <ul @click="menu_leftNav">
             <li>
-                <a href="#0">
+                <a @click="tiaozhuan" >
                 <i class="iconfont icon-yinliao"></i><a>热销</a>
                 </a>
             </li>
             <li>
-                <a href="#5">
+                <a @click="tiaozhuan" >
                 <i class="iconfont icon-yinliao"></i><a>优惠</a>
                 </a>
             </li>
             <li>
-                <a href="#10">
+                <a @click="tiaozhuan" >
                 <i class="iconfont icon-iconyuanquanzhuanqu13"></i>
                 <a>中餐</a></a>
             </li>
             <li>
-                <a href="#15">
+                <a @click="tiaozhuan" >
                 <i class="iconfont icon-xican"></i><a>西餐</a></a>
             </li>
             <li>
-                <a href="#20">
-                <i class="iconfont icon-shaokao"></i><a href="#20">烧烤</a></a>
+                <a @click="tiaozhuan" >
+                <i class="iconfont icon-shaokao"></i><a>烧烤</a></a>
             </li>
             <li>
-                <a href="#25">
-                <i class="iconfont icon-xiaochi"></i><a href="#25">小吃</a></a>
+                <a @click="tiaozhuan" >
+                <i class="iconfont icon-xiaochi"></i><a>小吃</a></a>
             </li>
             <li>
-                <a href="#30">
-                <i class="iconfont icon-tiandian"></i><a href="#30">甜品</a></a>
+                <a @click="tiaozhuan" >
+                <i class="iconfont icon-tiandian"></i><a>甜品</a></a>
             </li>
             <li>
-                <a href="#35">
-                <i class="iconfont icon-yinliao"></i><a href="#35">饮料</a></a>
+                <a @click="tiaozhuan" >
+                <i class="iconfont icon-yinliao"></i><a>饮料</a></a>
             </li>
         </ul>
     </div>
@@ -48,7 +48,7 @@
             
         <div class="page"  v-if="index%5 == 0" :id="index">
             <i></i>
-            <p>{{value.intro}}</p>
+            <p class="type">{{value.intro}}</p>
         </div>
         <ul>
             <li @click="li_alert">

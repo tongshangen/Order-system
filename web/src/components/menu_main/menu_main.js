@@ -171,6 +171,16 @@ export default {
            $('#menu_left li a').css('color','#EFBC0F')
            $(ev.target).closest('li').find('i').css('color','#fff')
            $(ev.target).closest('li').find('a').css('color','#fff')
+        },
+        //页面跳转动画
+        tiaozhuan:function(e){
+        	var index = $(e.target).parent().parent().index();
+        	var type = $('.type');    	
+    		var menu_datagrid = $('#menu_datagrid');
+			var menu_top = menu_datagrid.offset().top;
+        	var type_top = $(type[index]).offset().top - menu_top;
+        	console.log(type_top);
+        	menu_datagrid.animate({scrollTop:type_top},500);
         }
     },
     mounted: function(){
