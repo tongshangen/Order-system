@@ -1,0 +1,1 @@
+INSERT INTO `menuadd` VALUES (210, '88', '极品牛腱肉 ,红烧猪脚', '\n                        2012\n                        ,196', '3\n                        ,2', '6036\n                        ,392', 'src/img/013.jpg,src/img/001.jpg', '22,1');

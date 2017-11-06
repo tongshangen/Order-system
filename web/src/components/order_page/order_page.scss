@@ -62,12 +62,13 @@ html, body {
         	li{margin-bottom: 0.3rem;
 				table{width: 100%;
 					tr{width: 100%;
-						td{	font-size: 0.48rem;
+						td,th{font-size: 0.48rem;
 							img{padding: 0.2rem 0 0 0.5rem; width: 3rem;height: 2.5rem;}
 							button{
 								font-size: 0.56rem;
 							}
 						}
+						th{margin-bottom: 20px;}
 					}
 				}
         	}

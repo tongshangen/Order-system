@@ -10,17 +10,19 @@
 			<ul class="order_all">
 				<li v-for="idxs in length">
 					<table>
-						<tr>
-							<!-- <td>{{value.id}}</td> -->
-							<td>{{name[idxs-1]}}</td>
-							<td>{{price[idxs-1]}}元</td>
-							<td>{{number[idxs-1]}}份</td>
-						</tr>
+						<tbody>
+							<tr>
+								<td>{{name[idxs-1]}}</td>
+								<td>{{price[idxs-1]}}元</td>
+								<td>{{number[idxs-1]}}份</td>
+							</tr>
 						<tr>
 							<td colspan="2"><img :src="url[idxs-1]"  alt=""></td>
 							<td></td>
 							<td><button type="button" class="btn btn-default btn-lg active" @click="quit">退菜</button></td>
 						</tr>
+						</tbody>
+						
 					</table>
 				</li>
 			</ul>
@@ -58,6 +60,7 @@
 				datagrid: [],
 				dingdan: now,
 				length: 0,
+				idx:[],
 				name: [],
 				price: [],
 				number: [],
@@ -84,25 +87,38 @@
 			console.log(this)
 			var self = this;
 			http.post({
+                url: "menuSelect"
+            ,vm:this}).then(res => {
+                self.datagoods = res.data[0];
+                if(res.data[0] != undefined){
+                    self.idx = res.data[0].name.split(',').length;
+                    $('.verify span').html('1');
+                }
+            })
+
+			http.post({
 			    url: "menuSelect"
 			}).then(res => {
 			    self.datagrid = res.data;
-			    console.log(res.data)
-			   	self.price = res.data[0].price.split(",");
-			    self.name = res.data[0].name.split(",");
-			   	self.number = res.data[0].number.split(",");
-			   	self.url = res.data[0].url.split(",");
-			   	self.allprice = res.data[0].allprice.split(",");
-			    self.length = res.data[0].name.split(",").length;
-			    // console.log(self.length)
-			    // console.log(self.allprice[0])
-			     // var num = Number(self.allprice[0])
-			     // console.log(num)
-			     
-			    var arr = self.allprice;
+			    console.log(res.data);
+			    if(res.data[0] != undefined){
+                	self.idx = res.data[0].idx.split(",");
+				   	self.price = res.data[0].price.split(",");
+				    self.name = res.data[0].name.split(",");
+				   	self.number = res.data[0].number.split(",");
+				   	self.url = res.data[0].url.split(",");
+				   	self.allprice = res.data[0].allprice.split(",");
+				    self.length = res.data[0].name.split(",").length;
+				    // console.log(self.length)
+				    // console.log(self.allprice[0])
+				     // var num = Number(self.allprice[0])
+				     // console.log(num)
+				     
+				    var arr = self.allprice;
 
-			    for (var i = 0; i < arr.length; i++) {
-			    	self.total += arr[i]*1;	
+				    for (var i = 0; i < arr.length; i++) {
+				    	self.total += arr[i]*1;	
+				    }
 			    }
 			})
 		}

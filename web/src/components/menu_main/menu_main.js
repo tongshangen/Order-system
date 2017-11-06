@@ -68,7 +68,17 @@ export default {
                 this.CdataName.push(this.val+'-'+$(e.target).closest('.centent').find('h2').text())
                 $('.Cdata').html(this.CdataName+',')
                 console.log($('.Cdata').html())
+            } else if($('.verify span').html() == '1' && $(e.target)[0] == $(e.target).parent().find('i').eq(1)[0]){
+
+
+                var Ctxt = this.val+'-'+$(e.target).closest('.centent').find('h2').text();
+                var Cidx = this.CdataName.indexOf(Ctxt);
+                if(Cidx >= 0){
+                    this.CdataName.splice(Cidx, 1)
+                }
+                $('.Cdata').html(this.CdataName+',')
             }
+
             // 判断加减
             if($(e.target).index() > 0){
                 // 购物车相同物品减一
@@ -167,14 +177,17 @@ export default {
             var index = $(e.target).parent().parent().index();
             var type = $('.type');      
             var menu_datagrid = $('#menu_datagrid');
-            var menu_top = menu_datagrid.offset().top;
-            var type_top = $(type[index]).offset().top - menu_top;
+            
+            var type_top1 = $(type[0]).offset().top;
+            var type_top = $(type[index]).offset().top -type_top1;
             menu_datagrid.animate({scrollTop:type_top},500);
         }
     },
     mounted: function(){
         $('#menu_left li').eq(0).find('i').css('color','#fff')
         $('#menu_left li').eq(0).find('a').css('color','#fff')
+
+
         var self = this;
         http.post({
             url: "select"

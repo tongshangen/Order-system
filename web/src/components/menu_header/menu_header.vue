@@ -27,7 +27,10 @@
     					arr.push(item); 					
     				}
     			})
-    			var top = $(arr[0]).offset().top-menu_top;
+                var type = $('.type'); 
+    			var type_top1 = $(type[0]).offset().top;
+                var top = $(arr[0]).offset().top-type_top1;
+
     			$('#menu_datagrid').animate({scrollTop:top},1000);
     		}
     	}
