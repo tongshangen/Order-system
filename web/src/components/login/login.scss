@@ -1,0 +1,20 @@
+#login_main{background: #fff; height: 300px; width: 500px; position: absolute;left: 50%;top:30%;transform:translateX(-50%);
+	border-radius:8px; overflow:hidden; border:1px solid #888; box-shadow:0 0 10px #ccc;
+	h1{background: #394A59; color: #fff; padding:0 20px; height: 50px; line-height:50px; font-size:34px; position:relative; margin-top:8px; margin-bottom:25px; 
+		.x{display:inline-block; position:absolute; right:0px; width: 50px; text-align:center; cursor:pointer; }
+		.x:hover{background: red; color:#fff;}
+	}
+	form{padding:0 20px; background: #fff; overflow:hidden;}
+	label{font-size: 22px;}
+	input{width: 300px;}
+	.form-group{margin: 20px 0;}
+	.btn{font-size: 20px;margin-top: -50px;width: 100px;}
+	p{position:absolute; top: 0; height: 10px; width: 100%; background: #FF9326;}
+}
+
+
+// #but{position:absolute; left: 194px; width: 100px; margin-top:10px;}
+
+
+
+

@@ -1,0 +1,116 @@
+html, body {
+    height:100%;
+    width: 100%;
+}
+.order{
+	width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+
+	.order_header{
+		width: 100%;
+		height: 1.5rem;
+		line-height: 1.5rem;
+		display:flex;
+		background-color: #141414;
+		color: #fff;
+		justify-content: center;
+		align-items:center;
+		font-size: 0.62rem;
+		.glyphicon{
+			position: absolute;
+			left:0.2rem;
+			top:0.75rem;
+			color:#fff;
+			transform:translateY(-50%);
+		}
+		.header_center{
+			justify-content: center;
+		}
+	}
+	.order_center{
+		width: 100%;
+		height: 100%;
+		overflow-y:auto;
+		flex:1;
+        display:flex;
+        flex-direction: column;
+        .order_mid_top{
+        	padding: 10px 0;
+        	width: 100%;
+        	height: 0.6rem;
+        	font-size: 0.38rem;
+       		border-bottom: 0.01rem solid #ddd;
+        	display: flex;
+        	text-align: center;
+
+			span{
+				line-height: 0.8rem;
+				height: 0.8rem;
+				margin: 0.05rem 0.1rem;
+				border: 0.01rem solid #ddd;
+				background-color: #F4B12F;
+				border-radius:0.12rem;
+				
+			}
+			span:nth-child(1){flex:6}
+			span:nth-child(2){flex:3}
+			span:nth-child(3){flex:4}
+        }
+        ul{margin-left: 10%;
+        	li{margin-bottom: 0.3rem;
+				table{width: 100%;
+					tr{width: 100%;
+						td,th{font-size: 0.48rem;
+							img{padding: 0.2rem 0 0 0.5rem; width: 3rem;height: 2.5rem;}
+							button{
+								font-size: 0.56rem;
+							}
+						}
+						th{margin-bottom: 20px;}
+					}
+				}
+        	}
+        }
+	}
+	.order_footer{
+		width: 100%;
+		height: 100px;
+		display:flex;
+		background: #141414;
+		color: #fff;
+		justify-content: center;
+        align-items:center;
+		.btn{
+			width: 2.5rem;
+			margin: 0.2rem;
+			text-align: center;
+			font-size: 0.52rem;
+			background-color: #F4B12F;
+			// color:#fff;
+			border-right:0.02rem solid #ccc;
+		}
+
+		// .last{width: 2.5rem;}
+	}
+
+}
+
+@media screen and (min-width:992px){
+	.order_header{font-size: 36px;} 
+	.order_mid_top{font-size: 28px;}
+	.btn{font-size: 40px;}
+}
+
+@media screen and (min-width:1400px){
+	.order_header{font-size: 48px;} 
+	.order_mid_top{font-size: 34px;}
+	.btn{font-size: 50px;}
+}
+
+@media screen and (min-width:2000px){
+	.order_header{font-size: 76px;} 
+	.order_mid_top{font-size: 40px;}
+	.btn{font-size: 60px;}
+}

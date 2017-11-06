@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>文件上传</title>
+    <script src="../lib/jquery-3.2.1.js"></script>
+</head>
+<body>
+    <input type="text" placeholder="菜品名称"/><br />
+    <input type="text" placeholder="菜品价格"/><br />
+    <img id="Vimg" src/><br />
+    <input type="file" placeholder="菜品图片" id="putimg"/><br />
+    <input type="text" placeholder="菜品定位"/><br />
+    <input type="text" placeholder="菜品简介"/><br />
+    <input type="text" placeholder="菜品详情"/><br />
+    <button>确认添加菜品</button>
+    <script type="text/javascript">
+    jQuery(function($){
+        // 图片预览
+        $('#putimg').change(function(){
+            // 判断设备是否支持FileReader（文件预览）
+            if (window.FileReader){
+                var reader = new FileReader();
+            } else {
+                alert("您的设备不支持图片预览，换设备拉渣渣")
+            }
+            // 获取文件
+            var file = $(this)[0].files[0];
+            var img = /^image\//;
+            console.log(file.type);
+            // console.log(img.test(file.type));
+            // 判断是否图片
+            if(!img.test(file.type)){
+                alert("请加载图片文件");
+                return;
+            }
+            // 转码
+            reader.readAsDataURL(file);
+            // 读取完成后
+            reader.onload = function(e) {
+                console.log(e.target.result)
+                console.log(typeof e.target.result)
+                $('#Vimg').attr({'src':e.target.result});
+            }
+        })
+    })
+    </script>
+</body>
+</html>
