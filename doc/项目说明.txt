@@ -15,3 +15,5 @@
 在api目录下配置express、shocket.io、mysql运行环境
 在web目录下配置vue脚手架工具vue-cil
 
+运行时候需运行api 目录下的server.js文件,以及api目录下router文件夹下的Socket_help.js
+web目录下执行 npm run dev打开网页
