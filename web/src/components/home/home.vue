@@ -48,7 +48,7 @@
 		     	$('#help_btn').click(function(){
 		     		var help_msg = $(this).prev().val();
 					socket.emit('help', help_msg);
-					$(this).parent().html(`<p>爸爸很快就来..</p>`);
+					$(this).parent().html(`<p>服务员很快就来..</p>`);
 					setTimeout(function(){
 						$('.modal-content').hide();
 						$('.modal-backdrop').hide();
