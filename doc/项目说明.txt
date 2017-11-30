@@ -17,4 +17,6 @@
 
 运行时候需运行api 目录下的server.js文件,以及api目录下router文件夹下的Socket_help.js
 数据库order
+api目录下的MySQL的host改为本机ip
+web目录下的src目录下utils目录下的httpClient.js的baseUrl改为本机ip
 web目录下执行 npm run dev打开网页

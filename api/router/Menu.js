@@ -46,7 +46,7 @@ module.exports = {
 
         // 改
         app.post("/update", function(request, response){
-            db.update("update test set cost='3' where name='csx'" , function(result){
+            db.update("update test s et cost='3' where name='csx'" , function(result){
                 console.log(result)
             })
         });
